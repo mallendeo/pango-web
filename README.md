@@ -5,8 +5,8 @@
     npm install
     npm run watch
 
-## Compile
-    npm build --dist
+## Build
+    npm build
 
 ## License
 GNU GENERAL PUBLIC LICENSE
