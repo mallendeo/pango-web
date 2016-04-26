@@ -1,5 +1,5 @@
 # Pango
-[pango.cl](https://pango.cl) and [https://pangointeractive.com](https://pangointeractive.com) website
+[pango.cl](https://pango.cl) and [pangointeractive.com](https://pangointeractive.com) website
 
 ## Run
     npm install
