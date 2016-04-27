@@ -1,7 +1,7 @@
 // overwrite defaults in sanitize.styl
 root-box-sizing = border-box
 root-font-family = 'Lato', 'Open Sans', sans-serif
-root-color = #333333
+root-color = #292F36
 
 @import '../../node_modules/sanitize.css/lib/sanitize.styl'
 @import 'nib';
@@ -91,11 +91,54 @@ body {
 
 .pango-logo {
   @extend .absolute-center;
+  display: none;
   size: 190px;
   z-index: 9;
   //filter: saturate(0);
 }
-#Mask1 {
-  stroke: green;
-  stroke-width: 10px;
+
+.pango-words {
+  size: 190px 120px;
+  font-family: 'Lato';
+  font-size: 3rem;
+  font-weight: 300;
+  color: #f0f0f0;
+  @extend .absolute-center;
+  z-index: 10;
+  top: auto;
+  bottom: 10%;
+  overflow: hidden;
+
+  .dark-square-cover {
+    size: 100% 3.2rem;
+    background: introBg;
+    absolute: top 3.4rem left 0;
+    z-index: 0;
+    &:last-of-type {
+      height: 1.5rem;
+      top: 100%;
+    }
+  }
+
+  .line-separator {
+    size: 90% 2px;
+    background: #f0f0f0;
+    @extend .absolute-center;
+    top: 10%;
+  }
+}
+
+.pango-word {
+  text-align: center;
+  display: block;
+  z-index: 10;
+  span {
+    display: inline-block;
+  }
+  &:last-of-type {
+    letter-spacing: 0.11em;
+    font-size: 1.4rem;
+    font-weight: 100;
+    z-index: 12;
+  }
 }
