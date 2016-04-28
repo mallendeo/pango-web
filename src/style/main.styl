@@ -91,7 +91,6 @@ body {
 
 .pango-logo {
   @extend .absolute-center;
-  display: none;
   size: 190px;
   z-index: 9;
   //filter: saturate(0);
@@ -116,7 +115,8 @@ body {
     z-index: 0;
     &:last-of-type {
       height: 1.5rem;
-      top: 100%;
+      top: auto;
+      bottom: -2px;
     }
   }
 
@@ -140,5 +140,21 @@ body {
     font-size: 1.4rem;
     font-weight: 100;
     z-index: 12;
+  }
+}
+
+
+.pango-logo { display: none; }
+.outer-logo-circle {
+  @extend .absolute-center;
+  size: 190px;
+  z-index: 999;
+  transform-origin: 50% 50%;
+  transform: rotate(-90deg);
+  circle {
+    stroke: introBg;
+    stroke-dasharray: 2072;
+    stroke-dashoffset: 2072;
+    stroke-width: 16px;
   }
 }

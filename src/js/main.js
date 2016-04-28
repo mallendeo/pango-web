@@ -8,6 +8,7 @@ const animateLogo = tl => {
   const square = document.querySelector('.square')
   const lines = document.querySelectorAll('.line')
   const sparks = document.querySelectorAll('.spark')
+  const outerCircle = document.querySelector('.outer-logo-circle circle')
 
   tl.set(squareDark, {
       height: maxWindowSize,
@@ -41,6 +42,10 @@ const animateLogo = tl => {
       strokeDashoffset: 145,
       ease: 'Expo.easeOut'
     }, 1.5)
+    .to(outerCircle, 1.4, {
+      strokeDashoffset: 0,
+      ease: 'Expo.easeInOut'
+    }, 1.7)
   return tl
 }
 
@@ -53,9 +58,9 @@ const animateWords = tl => {
     .set(lineSeparator, { scaleX: 0 })
     .to(wordsWrapper, .2, { opacity: 1 }, 1.8)
     .to(lineSeparator, 1, {
-    scaleX: 1,
-    ease: 'Expo.easeOut'
-  }, 1.8)
+      scaleX: 1,
+      ease: 'Expo.easeOut'
+    }, 1.8)
 
   for (let i = 0; i < words.length; ++i) {
     const word = words[i]
@@ -70,14 +75,15 @@ const animateWords = tl => {
 
     const spans = word.querySelectorAll('span')
     for (let j = 0; j < spans.length; ++j) {
-
       let tlWords = new TimelineMax()
-      tlWords.set(spans[j], { y: 40, opacity: 1 })
-      tlWords.to(spans[j], 1, {
+      tlWords.set(spans[j], { y: i == 0 ? 40 : 30, opacity: 1 })
+      const delay = (1.8 + ((Math.abs(spans.length / 2 - j)) / 10)).toFixed(2)
+      tlWords.to(spans[j], 2, {
         y: 0,
         opacity: 1,
         ease: 'Expo.easeOut'
-      }, 1.8 + j / 20)
+      }, delay)
+      console.log(j, delay)
     }
   }
   return tl
