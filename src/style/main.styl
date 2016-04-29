@@ -15,6 +15,7 @@ html, body {
 
 body {
   background: #f0f0f0;
+  opacity: .9999;
 }
 
 .absolute-center {
@@ -24,16 +25,13 @@ body {
 
 .section {
   position: relative;
-  transform: translateZ(0);
   size: 100% 100vh;
 }
 
-.square {
+.square-wrapper {
   @extend .absolute-center;
   size: 200px;
   background: #f0f0f0;
-  transform: translateZ(0);
-  box-shadow: 0 0 0 0 rgba(0,0,0,.4);
 }
 
 .line {
@@ -60,12 +58,12 @@ body {
   @extend .absolute-center;
   size: 0;
   will-change: transform;
-  transform: scale(0) translateZ(0);
+  transform: scale(0);
 }
 .square-dark {
   background: introBg;
   border-radius: 50%;
-  transform: translateZ(0) translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .section--intro {
@@ -77,7 +75,8 @@ body {
   size: 100px;
 }
 .spark {
-  transform: translateZ(0) rotateZ(45deg);
+  transform: rotate(45deg);
+  size: 100%;
   absolute: top 0 right -200%;
   will-change: stroke-dashoffset;
   stroke-dasharray: 145;
@@ -85,14 +84,16 @@ body {
   &:last-child {
     left: -200%;
     right: auto;
-    transform: rotateZ(-135deg);
+    transform: rotate(-135deg);
   }
 }
 
 .pango-logo {
   @extend .absolute-center;
   size: 190px;
-  z-index: 9;
+  z-index: 15;
+  opacity: 0;
+  transform: scale(.9);
   //filter: saturate(0);
 }
 
@@ -107,6 +108,7 @@ body {
   top: auto;
   bottom: 10%;
   overflow: hidden;
+  will-change: opacity;
 
   .dark-square-cover {
     size: 100% 3.2rem;
@@ -123,6 +125,7 @@ body {
   .line-separator {
     size: 90% 2px;
     background: #f0f0f0;
+    will-change: transform;
     @extend .absolute-center;
     top: 10%;
   }
@@ -133,6 +136,7 @@ body {
   display: block;
   z-index: 10;
   span {
+    will-change: transform;
     display: inline-block;
   }
   &:last-of-type {
@@ -143,18 +147,65 @@ body {
   }
 }
 
-
-.pango-logo { display: none; }
 .outer-logo-circle {
   @extend .absolute-center;
   size: 190px;
-  z-index: 999;
+  z-index: 14;
   transform-origin: 50% 50%;
-  transform: rotate(-90deg);
-  circle {
+  transform: rotate(-90deg) scale(.9);
+  .circle {
+    transform: translateZ(1px);
     stroke: introBg;
     stroke-dasharray: 2072;
     stroke-dashoffset: 2072;
     stroke-width: 16px;
+  }
+}
+
+.dot {
+  absolute: top 0 left 0;
+  background: rgba(255,255,255,.4);
+  size: 2px;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+.section--about {
+  &:after {
+    content: '';
+    display: block;
+    absolute: top 0 left 0;
+    size: 100% 10rem;
+    background: introBg;
+    z-index: 10;
+  }
+}
+.wrapper {
+  width: 960px;
+  margin: auto;
+}
+
+.about-us {
+  relative: top 5rem left 0;
+  background: #f0f0f0;
+  border-radius: 3px;
+  padding: 1.4rem;
+  z-index: 14;
+  height: 20rem;
+  width: 30rem;
+  border: 1px solid introBg;
+  h1 {
+    font-size: 2rem;
+    span span {
+      will-change: transform;
+      display: inline-block;
+    }
+  }
+  p {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+  strong {
+
   }
 }

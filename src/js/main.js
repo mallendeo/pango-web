@@ -5,10 +5,11 @@ const animateLogo = tl => {
 
   const squareDarkWrapper = document.querySelector('.square-dark-wrapper')
   const squareDark = squareDarkWrapper.querySelector('.square-dark')
-  const square = document.querySelector('.square')
-  const lines = document.querySelectorAll('.line')
+  const square = document.querySelector('.square-wrapper')
+  const lines = square.querySelectorAll('.line')
   const sparks = document.querySelectorAll('.spark')
-  const outerCircle = document.querySelector('.outer-logo-circle circle')
+  const outerCircle = document.querySelector('.outer-logo-circle .circle')
+  const logo = document.querySelector('.pango-logo')
 
   tl.set(squareDark, {
       height: maxWindowSize,
@@ -46,6 +47,16 @@ const animateLogo = tl => {
       strokeDashoffset: 0,
       ease: 'Expo.easeInOut'
     }, 1.7)
+    .to(outerCircle, .4, {
+      opacity: 0,
+      ease: 'Power4.easeOut'
+    }, 2.7)
+    .to(logo, 1, {
+      opacity: 1,
+      scale: 1,
+      ease: 'Power4.easeOut'
+    }, 2.7)
+
   return tl
 }
 
@@ -77,8 +88,8 @@ const animateWords = tl => {
     for (let j = 0; j < spans.length; ++j) {
       let tlWords = new TimelineMax()
       tlWords.set(spans[j], { y: i == 0 ? 40 : 30, opacity: 1 })
-      const delay = (1.8 + ((Math.abs(spans.length / 2 - j)) / 10)).toFixed(2)
-      tlWords.to(spans[j], 2, {
+      const delay = (1.8 + ((Math.abs(spans.length / 2 - j)) / 20)).toFixed(2)
+      tlWords.to(spans[j], 1.4, {
         y: 0,
         opacity: 1,
         ease: 'Expo.easeOut'
@@ -89,5 +100,49 @@ const animateWords = tl => {
   return tl
 }
 
+const animateBackground = tl => {
+  const section = document.querySelector('.section--intro')
+  const createDots = qty => {
+    for (let i = 0; i < qty; i++) {
+      const dot = document.createElement('div')
+      dot.classList.add('dot')
+      section.appendChild(dot)
+      tl.set(dot, {
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+          scaleX: 0
+        })
+    }
+  }
+
+  const animateDots = dots => {
+    for (let i = 0; i < dots.length; i++) {
+      const dot = dots[i]
+      const dotSize = 2
+      const scaleTo = Math.random() * 20
+      const startTime = i / 8
+      tl.to(dot, 1, {
+          scaleX: 1,
+          ease: 'Expo.easeOut'
+        }, startTime)
+        .to(dot, 2, {
+          scaleX: 4 * (1 + scaleTo) + 8,
+          ease: 'Expo.easeOut'
+        }, startTime + .8)
+        .to(dot, 2, {
+          scaleX: 0,
+          x: '+=' + 4 * (scaleTo + 1) * dotSize,
+          ease: 'Expo.easeOut'
+        }, startTime + 1.5)
+    }
+  }
+
+  createDots(10)
+
+  const dots = section.querySelectorAll('.dot')
+  animateDots(dots)
+}
+
+animateBackground(new TimelineMax({ delay: 1.4, repeat:-1 }))
 animateLogo(new TimelineMax())
 animateWords(new TimelineMax())
