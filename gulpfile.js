@@ -16,7 +16,7 @@ const nib          = require('nib')
 
 gulp.task('default', ['build'])
 
-gulp.task('clean', () => del([ 'dist/**/*' ]))
+gulp.task('clean', () => del.sync([ 'dist/**/*' ]))
 
 gulp.task('stylus', () => {
   gulp.src('src/style/*.styl')
@@ -42,6 +42,10 @@ gulp.task('browserify', () => {
       plugins: ['transform-es2015-modules-commonjs']
     }))
     .bundle()
+    .on('error', function(err) {
+      console.log('Error:', err)
+      this.emit('end')
+    })
     .pipe(source('main.js'))
     .pipe(buffer())
     .pipe(gutil.env.dist ? uglify() : gutil.noop())
@@ -50,8 +54,7 @@ gulp.task('browserify', () => {
 
 gulp.task('copy-files', () => {
   return gulp.src([
-      'src/*.png',
-      'src/*.ico',
+      'src/*.{png,ico}',
       'src/assets/**/*'
     ], { base: 'src' })
     .pipe(gulp.dest('dist'))
@@ -71,13 +74,11 @@ gulp.task('watch', ['build'], () => {
   })
 
   gulp.watch([
-    'src/*.html',
-    'src/*.json',
+    'src/*.{html,json}',
     'src/assets/**/*'
   ], ['copy-files', 'copy-html'])
 
-  gulp.watch('dist/*.js', browserSync.reload)
-  gulp.watch('dist/*.html', browserSync.reload)
+  gulp.watch('dist/*.{js,html}', browserSync.reload)
 
   gulp.watch('src/js/**/*.js', ['browserify'])
   gulp.watch('src/style/**/*.styl', ['stylus'])
