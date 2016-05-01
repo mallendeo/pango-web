@@ -1,12 +1,21 @@
-/* global TimelineMax */
+/* global TimelineMax, TweenMax */
+import random  from 'lodash.random'
+import forEach from 'lodash.foreach'
+import raf     from 'raf'
+
+const addClass = (el, className) => {
+  el.classList ? el.classList.add(className) : el.className += ' ' + className
+}
 
 const animateLogo = tl => {
   const maxWindowSize = Math.max(window.innerHeight, window.innerWidth)
 
   const squareDarkWrapper = document.querySelector('.square-dark-wrapper')
   const squareDark = squareDarkWrapper.querySelector('.square-dark')
+
   const square = document.querySelector('.square-wrapper')
   const lines = square.querySelectorAll('.line')
+
   const sparks = document.querySelectorAll('.spark')
   const outerCircle = document.querySelector('.outer-logo-circle .circle')
   const logo = document.querySelector('.pango-logo')
@@ -17,18 +26,18 @@ const animateLogo = tl => {
     })
     .set(lines, { scaleX: 0 })
 
-  for (let i = 0; i < lines.length; ++i) {
+  forEach(lines, (line, i) => {
     tl.to(lines[i], 2, {
       scaleX: 1,
       ease: 'Expo.easeOut'
     }, i / 10)
-  }
+  })
 
   tl.to(lines, .05, {
       opacity: 0
     }, 1)
     .to(squareDarkWrapper, 1.5, {
-      scale: 1.3,
+      scale: 1.4,
       ease: 'Expo.easeOut'
     }, 1)
     .to(square, 2, {
@@ -61,8 +70,8 @@ const animateLogo = tl => {
 }
 
 const animateWords = tl => {
-  const wordsWrapper = document.querySelector('.pango-words')
-  const words = wordsWrapper.querySelectorAll('.pango-word')
+  const wordsWrapper  = document.querySelector('.pango-words')
+  const words         = wordsWrapper.querySelectorAll('.pango-word')
   const lineSeparator = wordsWrapper.querySelector('.line-separator')
 
   tl.set(wordsWrapper, { opacity: 0 })
@@ -73,8 +82,7 @@ const animateWords = tl => {
       ease: 'Expo.easeOut'
     }, 1.8)
 
-  for (let i = 0; i < words.length; ++i) {
-    const word = words[i]
+  forEach(words, (word, i) => {
     const letters = word.textContent.split('')
     word.innerHTML = ''
 
@@ -85,64 +93,178 @@ const animateWords = tl => {
     }
 
     const spans = word.querySelectorAll('span')
-    for (let j = 0; j < spans.length; ++j) {
+    forEach(spans, (span, j) => {
       let tlWords = new TimelineMax()
-      tlWords.set(spans[j], { y: i == 0 ? 40 : 30, opacity: 1 })
+      tlWords.set(span, { y: i == 0 ? 40 : 30, opacity: 1 })
       const delay = (1.8 + ((Math.abs(spans.length / 2 - j)) / 20)).toFixed(2)
-      tlWords.to(spans[j], 1.4, {
+      tlWords.to(span, 1.4, {
         y: 0,
         opacity: 1,
         ease: 'Expo.easeOut'
       }, delay)
-      console.log(j, delay)
-    }
-  }
+    })
+  })
   return tl
 }
 
 const animateBackground = tl => {
-  const section = document.querySelector('.section--intro')
-  const createDots = qty => {
+  const wrapper = document.querySelector('.bg-lines-wrapper')
+  const createLines = qty => {
     for (let i = 0; i < qty; i++) {
-      const dot = document.createElement('div')
-      dot.classList.add('dot')
-      section.appendChild(dot)
-      tl.set(dot, {
-          x: Math.random() * window.innerWidth,
-          y: Math.random() * window.innerHeight,
+      const line = document.createElement('div')
+      addClass(line, 'line')
+      wrapper.appendChild(line)
+      tl.set(line, {
+          x: random(window.innerWidth),
+          y: random(window.innerHeight),
+          z: random(-200, 200),
+          width: random(0, 100) + 50,
           scaleX: 0
         })
     }
   }
 
-  const animateDots = dots => {
-    for (let i = 0; i < dots.length; i++) {
-      const dot = dots[i]
-      const dotSize = 2
-      const scaleTo = Math.random() * 20
-      const startTime = i / 8
-      tl.to(dot, 1, {
+  const animateLines = lines => {
+    for (let line of lines) {
+      const startTime = random(5, true)
+      tl.to(line, .4, {
           scaleX: 1,
-          ease: 'Expo.easeOut'
+          ease: 'Expo.Power4'
         }, startTime)
-        .to(dot, 2, {
-          scaleX: 4 * (1 + scaleTo) + 8,
-          ease: 'Expo.easeOut'
-        }, startTime + .8)
-        .to(dot, 2, {
+        .to(line, 2, {
           scaleX: 0,
-          x: '+=' + 4 * (scaleTo + 1) * dotSize,
-          ease: 'Expo.easeOut'
-        }, startTime + 1.5)
+          x: '+=' + line.style.width,
+          ease: 'Power4.easeOut'
+        }, startTime + .4)
     }
+
+    // mousemove 3d effect
+    const update = (elem, event) => {
+      const xpos = event.layerX || event.offsetX
+      const ypos = event.layerY || event.offsetY
+
+      const ax = -(window.innerWidth / 2 - xpos) / 40
+      const ay = (window.innerHeight / 2 - ypos) / 10
+
+      TweenMax.to(wrapper, .75, {
+          rotationX: ay,
+          rotationY: ax,
+          ease: 'Power0.easenone'
+        })
+    }
+
+    // get element for mousemove event tracking
+    // on top of all other layers
+    const trackerLayer = document.querySelector('.mouse-tracker-layer')
+    trackerLayer.addEventListener('mousemove', e => raf(() => update(wrapper, e)))
   }
 
-  createDots(10)
-
-  const dots = section.querySelectorAll('.dot')
-  animateDots(dots)
+  createLines(50)
+  animateLines(wrapper.querySelectorAll('.line'))
 }
 
-animateBackground(new TimelineMax({ delay: 1.4, repeat:-1 }))
+const slideshow = () => {
+  let slideshows = document.querySelectorAll('[data-slideshow]')
+  forEach(slideshows, slideshow => {
+    let slides = slideshow.querySelectorAll('.slide')
+    let tl = new TimelineMax({ repeat: -1 })
+    TweenMax.set(slides, { opacity: 0 })
+    forEach(slides, slide => {
+      tl.to(slide, 1, {
+          opacity: 1,
+          delay: -1
+        })
+        .to(slide, 1, {
+          opacity: 0,
+          delay: 4
+        })
+    })
+  })
+}
+
+slideshow()
+
+const drawDevices = () => {
+  const devices = document.querySelectorAll('.devices .device')
+
+  const init = () => {
+    draw(false)
+  }
+
+  const draw = (draw = true) => {
+    forEach(devices, (device, i) => {
+      const paths = device.querySelectorAll('svg path')
+      const name = device.querySelector('h4')
+      TweenMax.set(name, { opacity: 0 })
+
+      forEach(paths, path => {
+        const strokeLength = path.getAttribute('stroke-dasharray')
+        TweenMax.set(path, {
+          strokeDashoffset: -strokeLength,
+          opacity: 0
+        })
+
+        if (!draw) return
+        const delay = i / 2
+        TweenMax.to(path, 4, {
+          strokeDashoffset: 0,
+          ease: 'Power4.easeOut',
+          opacity: 1,
+          delay: delay
+        })
+        TweenMax.to(path, 4, {
+          fill: '#f0f0f0',
+          ease: 'Power4.easeOut',
+          delay: delay + 3
+        })
+        TweenMax.to(name, 4, {
+          opacity: 1,
+          ease: 'Power4.easeOut',
+          delay: delay + 3
+        })
+      })
+    })
+  }
+
+  return {
+    draw,
+    init,
+    triggered: false
+  }
+}
+
+// Get absolute element position
+// gotten from here http://bit.ly/1X0FZaC
+const cumulativeOffset = elem => {
+  let top = 0
+  let left = 0
+  do {
+    top += elem.offsetTop  || 0
+    left += elem.offsetLeft || 0
+    elem = elem.offsetParent
+  } while(elem)
+
+  return { top, left }
+}
+
+const trigger = document.querySelector('.section--about')
+const draw = drawDevices()
+draw.init()
+let triggerOffset = cumulativeOffset(trigger).top
+document.addEventListener('scroll', () => {
+  raf(() => {
+    console.log(document.body.scrollTop, triggerOffset)
+    if (!draw.triggered && document.body.scrollTop > triggerOffset) {
+      drawDevices().draw()
+      draw.triggered = true
+    }
+  })
+})
+
+animateBackground(new TimelineMax({
+  delay: 2.8,
+  repeat: -1,
+  repeatDelay: 0
+}))
 animateLogo(new TimelineMax())
 animateWords(new TimelineMax())

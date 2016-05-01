@@ -11,11 +11,11 @@ introBg = #292F36;
 html, body {
   width: 100%;
   min-height: 100%;
+  background: #f0f0f0;
 }
 
 body {
-  background: #f0f0f0;
-  opacity: .9999;
+  padding-bottom: 8rem;
 }
 
 .absolute-center {
@@ -25,7 +25,8 @@ body {
 
 .section {
   position: relative;
-  size: 100% 100vh;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .square-wrapper {
@@ -88,13 +89,17 @@ body {
   }
 }
 
+.pango-logo-group {
+  @extend .absolute-center;
+  z-index: 15;
+}
+
 .pango-logo {
   @extend .absolute-center;
   size: 190px;
-  z-index: 15;
+  z-index: 16;
   opacity: 0;
   transform: scale(.9);
-  //filter: saturate(0);
 }
 
 .pango-words {
@@ -162,50 +167,174 @@ body {
   }
 }
 
-.dot {
+.bg-lines-wrapper {
+  size: 100%;
   absolute: top 0 left 0;
-  background: rgba(255,255,255,.4);
-  size: 2px;
-  transform: scaleX(0);
-  transform-origin: 0 50%;
-}
-
-.section--about {
-  &:after {
-    content: '';
-    display: block;
+  z-index: 10;
+  will-change: transform;
+  transform: perspective(1000px) rotateX(45deg);
+  transform-style: preserve-3d;
+  .line {
     absolute: top 0 left 0;
-    size: 100% 10rem;
-    background: introBg;
-    z-index: 10;
+    background: rgba(255,255,255,.2);
+    size: 2px;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
   }
 }
-.wrapper {
-  width: 960px;
-  margin: auto;
+
+
+.section--about {
+  background: introBg;
+  padding: .4em 0 4em 0;
+  display: inline-block;
+  p {
+    width: 80%;
+    margin: auto;
+    padding-top: 4em;
+    color: #fff;
+    font-size: 3em;
+  }
+  strong {
+    color: #E14756;
+    text-transform: uppercase;
+  }
 }
 
-.about-us {
-  relative: top 5rem left 0;
-  background: #f0f0f0;
-  border-radius: 3px;
-  padding: 1.4rem;
+.wrapper {
+  width: 960px 100%;
+  margin: auto;
   z-index: 14;
-  height: 20rem;
-  width: 30rem;
-  border: 1px solid introBg;
+}
+
+.description {
+  position: relative;
+  padding: 2rem 1.4rem;
+  width: 50%;
+  margin: auto;
   h1 {
     font-size: 2rem;
-    span span {
-      will-change: transform;
-      display: inline-block;
-    }
   }
   p {
     margin-top: 1rem;
     font-size: 1.2rem;
   }
-  strong {
+}
 
+.slideshow {
+  margin: auto;
+  absolute: top 0 left 0;
+  size: 100%;
+  overflow: hidden;
+  &:after {
+    content: '';
+    absolute: top 0 left 0;
+    size: 100%;
+    background-color: #fff;
+    background-color: rgba(255,255,255,.8);
+    background-image: radial-gradient(rgba(0,0,0,.1) 20%, transparent 20%);
+    background-size: 6px 6px;
+  }
+  .slide {
+    display: block;
+    absolute: top 0 left 0;
+    size: 100%;
+  }
+}
+
+.mouse-tracker-layer {
+  absolute: top 0 left 0;
+  size: 100%;
+  z-index: 18;
+}
+
+.top-nav {
+  absolute: top 0 right 0;
+  z-index: 19;
+}
+.nav-list {
+  list-style: none;
+  padding: 1rem 2rem;
+}
+.nav-list--item {
+  display: inline-block;
+  a {
+    color: #f0f0f0;
+    padding: .4rem;
+    margin: 0 .4rem;
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all .2s ease;
+    border: 1px solid transparent;
+    &:hover {
+      border-color: currentColor;
+    }
+  }
+}
+
+.devices {
+  width: 80%;
+  height: 12em;
+  margin: auto;
+  padding-top: 5em;
+  margin-bottom: 4em;
+  display: flex;
+  justify-content: space-between;
+  .device {
+    height: 100%;
+    text-align: center;
+    h4 {
+      color: #f0f0f0;
+      margin-top: 1em;
+    }
+    svg {
+      height: 100%;
+      path {
+        stroke: #f0f0f0;
+        stroke-width: .5px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) {
+  .pango-logo-group {
+    transform: scale(.6);
+  }
+  .devices {
+    padding-top: 1rem;
+    display: block;
+    .device {
+      float: left;
+      width: 50%;
+      margin: 2rem 0;
+      h4 {
+        font-size: 1.4em;
+      }
+    }
+    svg {
+      height: auto;
+      width: 100%;
+    }
+  }
+  .section--about {
+    font-size: .5rem;
+  }
+  .wrapper {
+    width: 100%;
+    padding-top: 0;
+  }
+  .description {
+    width: 100%;
+    p:nth-of-type(n+2) {
+      display: none;
+    }
+  }
+  .slideshow div {
+    position fixed
+    will-change: background
+    transform: translateZ(-1px);
+    background-size: 100%;
   }
 }

@@ -9,71 +9,92 @@
   </head>
 <body>
 <section class="section section--intro">
+
+  <!-- Menu -->
+  <nav class="top-nav">
+    <ul class="nav-list">
+      <li class="nav-list--item">
+        <a href="#">Quienes Somos</a>
+      </li>
+      <li class="nav-list--item">
+        <a href="#">Portafolio</a>
+      </li>
+      <li class="nav-list--item">
+        <a href="#">Contacto</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- mousemove event layer (for background effect) -->
+  <div class="mouse-tracker-layer"></div>
+
   <div class="square-dark-wrapper">
     <div class="square-dark"></div>
   </div>
 
-  <!-- Outer logo outline animation -->
-  <svg class="outer-logo-circle" viewBox="0 0 700 700">
-    <circle class="circle" fill="none" cx="350" cy="350" r="330"/>
-  </svg>
+  <div class="pango-logo-group">
+    <!-- Outer logo outline animation -->
+    <svg class="outer-logo-circle" viewBox="0 0 700 700">
+      <circle class="circle" fill="none" cx="350" cy="350" r="330"/>
+    </svg>
 
-  <!-- Pango SVG logo -->
-  <svg class="pango-logo" viewBox="91 185 700 700" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <defs>
-      <circle id="a" cx="350.5" cy="351" r="329"/>
-      <mask id="b" x="-4" y="-4" width="666" height="666">
-        <path fill="#fff" d="M17.5 18h666v666h-666z"/>
-        <use xlink:href="#a"/>
-      </mask>
-      <path d="M183 154c-12.15 0-183-49-183-49L154 0s51 119.85 51 132c0 12.15-9.85 22-22 22z" id="d"/>
-      <path d="M22 154c12.15 0 183-49 183-49L51 0S0 119.85 0 132c0 12.15 9.85 22 22 22z" id="f"/>
-    </defs>
-    <g fill="none" fill-rule="evenodd" transform="translate(91 185)">
-      <circle cx="350" cy="350" r="350"/>
-      <mask id="c" fill="#fff">
-        <use xlink:href="#a"/>
-      </mask>
-      <use fill="#672F56" xlink:href="#a"/>
-      <use stroke-opacity="0" stroke="#979797" mask="url(#b)" stroke-width="8" xlink:href="#a"/>
-      <g mask="url(#c)">
-        <path d="M667.8 262.12c-9.42-4.4-20.14-8.7-30.63-12.65 3.38-15.18 5.72-30.57 7-46.07 4.8-57-4.3-78.25-32.27-99.45-27.96-21.2-74.86-19.9-109.56-10.53-10.65 2.86-22.4 6.7-33.56 10.7-6.58-11.4-13.94-23.4-21-33.56-20.62-29.46-55.66-60.64-90.7-62.38-35.06-1.74-55.74 8.66-88.74 55.45-9 12.7-17.1 25.98-24.26 39.78-10.57-3.7-21.56-7.3-31.58-10-34.73-9.3-81.62-10.6-109.58 10.6-27.96 21.2-37.07 42.4-32.27 99.5 1.27 15.5 3.6 30.9 7 46.1-10.5 4-21.2 8.3-30.62 12.7-32.6 15.2-69.4 44.3-77.18 78.5-7.8 34.2-1.13 56.4 39.2 97C27.35 456 42 471.1 52.52 482.1c-3.14 14.3-5.35 28.76-6.63 43.33-5.2 57 3.8 78.3 31.7 99.66 27.8 21.3 94 24.2 128.7 15.1 34.7-9.2 59.1-31.6 59.1-31.6l176.3 5.7s48 20.3 84 29.7c36 9.4 84.5 10.6 113.4-11.6 28.8-22.1 38.1-44.1 32.8-103.1-1.4-16.3-4-32.5-7.7-48.4 9.8-10.9 23.5-25.7 41.3-43.6 40.3-40.6 47-62.7 39.2-96.9-7.8-34.2-44.6-63.3-77.2-78.5z" fill="#873158"/>
-        <path d="M611.05 285.6c-6.66-3.07-14.07-6.08-21.52-8.92 2.44-11.6 4.2-23.33 5.23-35.14 4.43-49.2-3.3-67.42-27.23-85.55-23.93-18.2-64.28-16.8-94.2-8.5-7.52 2-15.68 4.7-23.7 7.5-5-8.6-10.33-17.3-15.54-24.8-17.7-25.6-47.7-52.6-77.6-54.1-30-1.5-47.7 7.5-75.9 48-6.8 9.7-13 19.8-18.6 30.3-7.6-2.6-15.2-5.1-22.2-7-29.9-8.2-70.3-9.7-94.2 8.5-24 18.1-31.7 36.3-27.2 85.5 1 11.8 2.7 23.5 5.2 35.1-7.5 2.8-14.9 5.8-21.5 8.9-28.2 12.9-60 37.8-66.7 67-6.7 29.3-.9 48.2 34.1 83 20 20 37.9 32.5 49.5 39.5-1.4 6.1-2.6 12.6-3.7 19.7-7.5 48.8-.9 67.5 21.9 87 22.7 19.6 63.1 20.44 93.5 14.1 30.3-6.33 71.4-21.4 71.4-21.4h110.8s41 15.1 71.3 21.44c30.3 6.32 70.7 5.33 93.5-14.25 22.7-19.57 29.3-38.2 21.8-87-1.2-7.4-2.5-14.3-3.9-20.67 11.6-7.2 28.7-19.47 47.9-38.5 35-34.9 40.8-53.8 34.1-83.05-6.7-29.26-38.5-54.1-66.7-67.05z" fill="#A83956"/>
-        <path d="M555.53 308.96c-3.9-1.76-8.13-3.5-12.45-5.18 1.4-7.2 2.64-15.26 3.52-24.2 4.05-41.32-2.3-56.6-22.2-71.64-19.9-15.05-53.7-13.58-78.8-6.48-4.42 1.25-9.1 2.75-13.82 4.36-3.3-5.6-6.72-11.1-10.06-16-14.67-21.58-39.6-44.42-64.53-45.7-25-1.26-39.6 6.36-63.1 40.63-5.1 7.4-9.3 14.4-12.9 20.8-4.4-1.5-8.8-2.88-12.9-4-25.1-7.1-58.9-8.6-78.8 6.47-19.9 15.06-26.3 30.3-22.2 71.65.8 8.93 2.1 17 3.5 24.2-4.3 1.68-8.6 3.42-12.5 5.17-23.8 10.7-50.6 31.28-56.2 55.6-5.6 24.34-.7 40.1 29 69.17 10.4 10.3 21.7 19.6 33.8 27.9-1.7 5.8-3.2 12-4.6 18.8-8.4 40.7-3.6 56.6 14.6 73.6 18.2 17.1 52 19.3 77.7 14.9 25.7-4.4 60.6-15.6 60.6-15.6H402s53.6 14.4 60.7 15.6c25.7 4.5 59.44 2.3 77.7-14.7 18.22-17 23-32.9 14.6-73.6-1.47-7.2-3.14-13.8-4.9-19.9 11.5-7.9 22.3-16.9 32.27-26.7 29.6-29.1 34.6-44.8 29-69.2-5.6-24.3-32.4-44.9-56.2-55.6z" fill="#C34057"/>
-        <path d="M497.6 332.45c-1.1-.5-2.27-1-3.46-1.46.72-4.2 1.36-8.6 1.88-13.3 3.68-33.5-1.28-45.8-17.17-57.8-15.9-12-43.12-10.5-63.4-4.5l-3.93 1.2c-1.53-2.6-3.08-5-4.6-7.3-11.7-17.6-31.56-36.3-51.43-37.4-19.9-1.1-31.6 5.2-50.3 33.2-2.7 3.9-5 7.7-7.1 11.3-1.2-.4-2.4-.8-3.6-1.1-20.3-6-47.5-7.6-63.4 4.4-15.9 12-20.9 24.2-17.2 57.7.5 4.7 1.1 9.1 1.9 13.2-1.2.42-2.4 1-3.5 1.4-19.4 8.42-41.3 24.8-45.7 44.14-4.5 19.4-.4 32 24 55.3 7 6.8 14.6 13.1 22.5 18.8-1.5 4.9-2.9 10.23-4.1 16.1-7 32.94-3.3 45.65 11.3 59.16 14.6 13.5 41.8 14.6 62.6 10.6 20.8-3.9 49.1-13.7 49.1-13.7h47.4s32.4 10.6 49.1 13.7c20.8 4 48 2.87 62.6-10.64 14.6-13.5 18.3-26.2 11.3-59.13-1.4-6.3-2.9-12-4.4-17.18 7.4-5.44 14.4-11.36 21-17.7 24.3-23.2 28.4-35.8 23.9-55.2-4.47-19.4-26.3-35.7-45.7-44.17z" fill="#E14756"/>
-        <g transform="translate(134 527)">
-          <mask id="e" fill="#fff">
-            <use xlink:href="#d"/>
-          </mask>
-          <path d="M149.34 22.85l16.63-.86 48.8 134s-51.8-62-93.7-110.7c.4-.8.8-1.7 1.27-2.5 6.35-11.8 18.9-17.7 27-20z" fill="#C3C3C3" mask="url(#e)"/>
-          <path d="M115 44.65c1.84.33 3.8.8 5.74 1.33l.3-.6c41.93 48.7 93.7 110.65 93.7 110.65s-84.72-33.83-138.5-70.6c2.08-17.78-.82-25 7.53-32.82 8.35-7.8 22.93-9.4 31.23-7.9z" fill="#AAA" mask="url(#e)"/>
-          <path d="M55.87 97.54c3-4.9 20.2-10.85 20.35-12.1 53.8 36.77 138.52 70.6 138.52 70.6s-96.9-.96-159.53-39.5c-.5-1.03-2.7-13.55.7-19z" fill="#909090" mask="url(#e)"/>
+    <!-- Pango SVG logo -->
+    <svg class="pango-logo" viewBox="91 185 700 700" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <circle id="a" cx="350.5" cy="351" r="329"/>
+        <mask id="b" x="-4" y="-4" width="666" height="666">
+          <path fill="#fff" d="M17.5 18h666v666h-666z"/>
+          <use xlink:href="#a"/>
+        </mask>
+        <path d="M183 154c-12.15 0-183-49-183-49L154 0s51 119.85 51 132c0 12.15-9.85 22-22 22z" id="d"/>
+        <path d="M22 154c12.15 0 183-49 183-49L51 0S0 119.85 0 132c0 12.15 9.85 22 22 22z" id="f"/>
+      </defs>
+      <g fill="none" fill-rule="evenodd" transform="translate(91 185)">
+        <circle cx="350" cy="350" r="350"/>
+        <mask id="c" fill="#fff">
+          <use xlink:href="#a"/>
+        </mask>
+        <use fill="#672F56" xlink:href="#a"/>
+        <use stroke-opacity="0" stroke="#979797" mask="url(#b)" stroke-width="8" xlink:href="#a"/>
+        <g mask="url(#c)">
+          <path d="M667.8 262.12c-9.42-4.4-20.14-8.7-30.63-12.65 3.38-15.18 5.72-30.57 7-46.07 4.8-57-4.3-78.25-32.27-99.45-27.96-21.2-74.86-19.9-109.56-10.53-10.65 2.86-22.4 6.7-33.56 10.7-6.58-11.4-13.94-23.4-21-33.56-20.62-29.46-55.66-60.64-90.7-62.38-35.06-1.74-55.74 8.66-88.74 55.45-9 12.7-17.1 25.98-24.26 39.78-10.57-3.7-21.56-7.3-31.58-10-34.73-9.3-81.62-10.6-109.58 10.6-27.96 21.2-37.07 42.4-32.27 99.5 1.27 15.5 3.6 30.9 7 46.1-10.5 4-21.2 8.3-30.62 12.7-32.6 15.2-69.4 44.3-77.18 78.5-7.8 34.2-1.13 56.4 39.2 97C27.35 456 42 471.1 52.52 482.1c-3.14 14.3-5.35 28.76-6.63 43.33-5.2 57 3.8 78.3 31.7 99.66 27.8 21.3 94 24.2 128.7 15.1 34.7-9.2 59.1-31.6 59.1-31.6l176.3 5.7s48 20.3 84 29.7c36 9.4 84.5 10.6 113.4-11.6 28.8-22.1 38.1-44.1 32.8-103.1-1.4-16.3-4-32.5-7.7-48.4 9.8-10.9 23.5-25.7 41.3-43.6 40.3-40.6 47-62.7 39.2-96.9-7.8-34.2-44.6-63.3-77.2-78.5z" fill="#873158"/>
+          <path d="M611.05 285.6c-6.66-3.07-14.07-6.08-21.52-8.92 2.44-11.6 4.2-23.33 5.23-35.14 4.43-49.2-3.3-67.42-27.23-85.55-23.93-18.2-64.28-16.8-94.2-8.5-7.52 2-15.68 4.7-23.7 7.5-5-8.6-10.33-17.3-15.54-24.8-17.7-25.6-47.7-52.6-77.6-54.1-30-1.5-47.7 7.5-75.9 48-6.8 9.7-13 19.8-18.6 30.3-7.6-2.6-15.2-5.1-22.2-7-29.9-8.2-70.3-9.7-94.2 8.5-24 18.1-31.7 36.3-27.2 85.5 1 11.8 2.7 23.5 5.2 35.1-7.5 2.8-14.9 5.8-21.5 8.9-28.2 12.9-60 37.8-66.7 67-6.7 29.3-.9 48.2 34.1 83 20 20 37.9 32.5 49.5 39.5-1.4 6.1-2.6 12.6-3.7 19.7-7.5 48.8-.9 67.5 21.9 87 22.7 19.6 63.1 20.44 93.5 14.1 30.3-6.33 71.4-21.4 71.4-21.4h110.8s41 15.1 71.3 21.44c30.3 6.32 70.7 5.33 93.5-14.25 22.7-19.57 29.3-38.2 21.8-87-1.2-7.4-2.5-14.3-3.9-20.67 11.6-7.2 28.7-19.47 47.9-38.5 35-34.9 40.8-53.8 34.1-83.05-6.7-29.26-38.5-54.1-66.7-67.05z" fill="#A83956"/>
+          <path d="M555.53 308.96c-3.9-1.76-8.13-3.5-12.45-5.18 1.4-7.2 2.64-15.26 3.52-24.2 4.05-41.32-2.3-56.6-22.2-71.64-19.9-15.05-53.7-13.58-78.8-6.48-4.42 1.25-9.1 2.75-13.82 4.36-3.3-5.6-6.72-11.1-10.06-16-14.67-21.58-39.6-44.42-64.53-45.7-25-1.26-39.6 6.36-63.1 40.63-5.1 7.4-9.3 14.4-12.9 20.8-4.4-1.5-8.8-2.88-12.9-4-25.1-7.1-58.9-8.6-78.8 6.47-19.9 15.06-26.3 30.3-22.2 71.65.8 8.93 2.1 17 3.5 24.2-4.3 1.68-8.6 3.42-12.5 5.17-23.8 10.7-50.6 31.28-56.2 55.6-5.6 24.34-.7 40.1 29 69.17 10.4 10.3 21.7 19.6 33.8 27.9-1.7 5.8-3.2 12-4.6 18.8-8.4 40.7-3.6 56.6 14.6 73.6 18.2 17.1 52 19.3 77.7 14.9 25.7-4.4 60.6-15.6 60.6-15.6H402s53.6 14.4 60.7 15.6c25.7 4.5 59.44 2.3 77.7-14.7 18.22-17 23-32.9 14.6-73.6-1.47-7.2-3.14-13.8-4.9-19.9 11.5-7.9 22.3-16.9 32.27-26.7 29.6-29.1 34.6-44.8 29-69.2-5.6-24.3-32.4-44.9-56.2-55.6z" fill="#C34057"/>
+          <path d="M497.6 332.45c-1.1-.5-2.27-1-3.46-1.46.72-4.2 1.36-8.6 1.88-13.3 3.68-33.5-1.28-45.8-17.17-57.8-15.9-12-43.12-10.5-63.4-4.5l-3.93 1.2c-1.53-2.6-3.08-5-4.6-7.3-11.7-17.6-31.56-36.3-51.43-37.4-19.9-1.1-31.6 5.2-50.3 33.2-2.7 3.9-5 7.7-7.1 11.3-1.2-.4-2.4-.8-3.6-1.1-20.3-6-47.5-7.6-63.4 4.4-15.9 12-20.9 24.2-17.2 57.7.5 4.7 1.1 9.1 1.9 13.2-1.2.42-2.4 1-3.5 1.4-19.4 8.42-41.3 24.8-45.7 44.14-4.5 19.4-.4 32 24 55.3 7 6.8 14.6 13.1 22.5 18.8-1.5 4.9-2.9 10.23-4.1 16.1-7 32.94-3.3 45.65 11.3 59.16 14.6 13.5 41.8 14.6 62.6 10.6 20.8-3.9 49.1-13.7 49.1-13.7h47.4s32.4 10.6 49.1 13.7c20.8 4 48 2.87 62.6-10.64 14.6-13.5 18.3-26.2 11.3-59.13-1.4-6.3-2.9-12-4.4-17.18 7.4-5.44 14.4-11.36 21-17.7 24.3-23.2 28.4-35.8 23.9-55.2-4.47-19.4-26.3-35.7-45.7-44.17z" fill="#E14756"/>
+          <g transform="translate(134 527)">
+            <mask id="e" fill="#fff">
+              <use xlink:href="#d"/>
+            </mask>
+            <path d="M149.34 22.85l16.63-.86 48.8 134s-51.8-62-93.7-110.7c.4-.8.8-1.7 1.27-2.5 6.35-11.8 18.9-17.7 27-20z" fill="#C3C3C3" mask="url(#e)"/>
+            <path d="M115 44.65c1.84.33 3.8.8 5.74 1.33l.3-.6c41.93 48.7 93.7 110.65 93.7 110.65s-84.72-33.83-138.5-70.6c2.08-17.78-.82-25 7.53-32.82 8.35-7.8 22.93-9.4 31.23-7.9z" fill="#AAA" mask="url(#e)"/>
+            <path d="M55.87 97.54c3-4.9 20.2-10.85 20.35-12.1 53.8 36.77 138.52 70.6 138.52 70.6s-96.9-.96-159.53-39.5c-.5-1.03-2.7-13.55.7-19z" fill="#909090" mask="url(#e)"/>
+          </g>
+          <g transform="translate(365 527)">
+            <mask id="g" fill="#fff">
+              <use xlink:href="#f"/>
+            </mask>
+            <path d="M54.4 24.86l-16.6-.83-48.8 134S40.8 96.1 82.7 47.4c-.44-.83-.8-1.66-1.3-2.54-6.34-11.73-18.9-17.67-27-20z" fill="#C3C3C3" mask="url(#g)"/>
+            <path d="M88.75 46.65c-1.84.33-3.8.8-5.74 1.33l-.3-.6C40.8 96.1-11 158.04-11 158.04s84.73-33.83 138.52-70.6c-2.1-17.78.8-25-7.54-32.82-8.35-7.8-22.93-9.4-31.23-7.95z" fill="#AAA" mask="url(#g)"/>
+            <path d="M147.88 99.54c-3-4.9-20.2-10.85-20.35-12.1C73.73 124.2-11 158.04-11 158.04s97.56-3.63 160.2-42.18c.58-1.02 2.06-10.84-1.32-16.33z" fill="#909090" mask="url(#g)"/>
+          </g>
+          <path d="M473.6 388.62c-3-12.73-16.14-23.6-29.55-30.27.12-.83.37-1.64.48-2.5 3.3-25.62-.2-34.93-12.07-43.83-9-6.72-22.9-7.46-35.85-5.32-8.8-12.94-22.7-25.86-36.7-26.62-14.8-.8-23.5 4-37.4 25.8-.8 1.27-1.6 2.52-2.3 3.76-15.6-4.9-36.3-6.48-48.1 2.43-11.8 8.9-15.4 18.16-12.1 43.8.1.84.3 1.65.4 2.48-13.4 6.65-26.8 17.53-29.8 30.27-1.9 8.27-1.6 14.9 2.5 22.33 16.6 44.65 75 181.64 75 181.64 7.6 16.2 25.5 31.8 44.4 31.8 21.8 0 39-19.4 44.4-34.2 0 0 59.2-136.7 75.3-179.6 1.2-2.5 2-5.1 2.4-7.9 1.5-4.5.6-9-.6-14.3z" fill="#F67958"/>
         </g>
-        <g transform="translate(365 527)">
-          <mask id="g" fill="#fff">
-            <use xlink:href="#f"/>
-          </mask>
-          <path d="M54.4 24.86l-16.6-.83-48.8 134S40.8 96.1 82.7 47.4c-.44-.83-.8-1.66-1.3-2.54-6.34-11.73-18.9-17.67-27-20z" fill="#C3C3C3" mask="url(#g)"/>
-          <path d="M88.75 46.65c-1.84.33-3.8.8-5.74 1.33l-.3-.6C40.8 96.1-11 158.04-11 158.04s84.73-33.83 138.52-70.6c-2.1-17.78.8-25-7.54-32.82-8.35-7.8-22.93-9.4-31.23-7.95z" fill="#AAA" mask="url(#g)"/>
-          <path d="M147.88 99.54c-3-4.9-20.2-10.85-20.35-12.1C73.73 124.2-11 158.04-11 158.04s97.56-3.63 160.2-42.18c.58-1.02 2.06-10.84-1.32-16.33z" fill="#909090" mask="url(#g)"/>
-        </g>
-        <path d="M473.6 388.62c-3-12.73-16.14-23.6-29.55-30.27.12-.83.37-1.64.48-2.5 3.3-25.62-.2-34.93-12.07-43.83-9-6.72-22.9-7.46-35.85-5.32-8.8-12.94-22.7-25.86-36.7-26.62-14.8-.8-23.5 4-37.4 25.8-.8 1.27-1.6 2.52-2.3 3.76-15.6-4.9-36.3-6.48-48.1 2.43-11.8 8.9-15.4 18.16-12.1 43.8.1.84.3 1.65.4 2.48-13.4 6.65-26.8 17.53-29.8 30.27-1.9 8.27-1.6 14.9 2.5 22.33 16.6 44.65 75 181.64 75 181.64 7.6 16.2 25.5 31.8 44.4 31.8 21.8 0 39-19.4 44.4-34.2 0 0 59.2-136.7 75.3-179.6 1.2-2.5 2-5.1 2.4-7.9 1.5-4.5.6-9-.6-14.3z" fill="#F67958"/>
       </g>
-    </g>
-  </svg>
-  <div class="square-wrapper">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-  </div>
-  <div class="sparks">
-    <svg class="spark" viewBox="91 -1 94 94" xmlns="http://www.w3.org/2000/svg">
-      <path d="M184 92c0-50.8-41.2-92-92-92" stroke="#f0f0f0" fill="none"/>
     </svg>
-    <svg class="spark" viewBox="91 -1 94 94" xmlns="http://www.w3.org/2000/svg">
-      <path d="M184 92c0-50.8-41.2-92-92-92" stroke="#f0f0f0" fill="none"/>
-    </svg>
+    <div class="square-wrapper">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <div class="sparks">
+      <svg class="spark" viewBox="91 -1 94 94" xmlns="http://www.w3.org/2000/svg">
+        <path d="M184 92c0-50.8-41.2-92-92-92" stroke="#f0f0f0" fill="none"/>
+      </svg>
+      <svg class="spark" viewBox="91 -1 94 94" xmlns="http://www.w3.org/2000/svg">
+        <path d="M184 92c0-50.8-41.2-92-92-92" stroke="#f0f0f0" fill="none"/>
+      </svg>
+    </div>
   </div>
 
   <h1 class="pango-words">
@@ -83,28 +104,137 @@
     <span class="pango-word">INTERACTIVE</span>
     <div class="dark-square-cover"></div>
   </h1>
+
+  <div class="bg-lines-wrapper"></div>
 </section>
 <section class="section section--about">
-  <div class="wrapper wrapper--about">
-    <div class="about-us">
-      <h1 class="about-us--title"><span>Quienes</span> <span>Somos</span></h1>
-      <p>En pango <strong>creamos</strong> plataformas interactivas de alto impacto.
-    <strong>Desarrollamos</strong> e integramos soluciones tecnológicas <strong>basadas
-    en la experiencia del usuario</strong>, el diseño y la interacción
-    con las nuevas tecnologías.</p>
+  <p>En Pango <strong>creamos</strong> plataformas interactivas de alto impacto.
+  <strong>Desarrollamos</strong> e integramos soluciones tecnológicas <strong>basadas
+  en la experiencia del usuario</strong>, el diseño y la interacción
+  con las nuevas tecnologías.</p>
+
+  <div class="devices">
+    <div class="device">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 82 104">
+        <path stroke-dasharray="348" d="M73 0H5C2.238 0 0 2.24 0 5v90c0 2.762 2.238 5 5 5h68c2.762 0 5-2.238 5-5V5c0-2.76-2.238-5-5-5zM39 98.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5c1.382 0 2.5 1.12 2.5 2.5s-1.118 2.5-2.5 2.5zm31-7.537C70 91.535 69.538 92 68.97 92H9.034C8.464 92 8 91.535 8 90.963V9.037C8 8.464 8.466 8 9.035 8h59.934C69.538 8 70 8.464 70 9.037v81.926z"/>
+      </svg>
+      <h4>Apps</h4>
+    </div>
+
+    <div class="device">
+      <svg viewBox="20 23 60 68" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" stroke-dasharray="178" d="M72.38 40.958c-1.185-3.23-2.964-6.487-5.642-9.198-4.144-4.196-9.71-6.324-16.542-6.324-6.828 0-12.393 2.126-16.538 6.32-2.65 2.68-4.42 5.896-5.606 9.093.953-.296 1.966-.455 3.015-.455H69.06c1.163 0 2.277.204 3.32.563zM69.06 41.918H31.068c-4.81 0-8.708 3.9-8.708 8.708V71.38c0 4.81 3.898 8.71 8.707 8.71h6.58c3.753 4.727 8.514 8.072 12.54 8.072s8.788-3.346 12.545-8.073h6.33c4.808 0 8.707-3.9 8.707-8.71V50.627c0-4.81-3.9-8.708-8.71-8.708zM27.205 71.25c1.794-4.98 5.246-13.52 9.725-19.632l1.51-.814L27.204 71.25zM36.68 50.89l-7.698-4.4 9.484 3.437-1.787.963zm13.508 34.28c-2.53 0-5.723-1.97-8.633-5.078h17.267c-2.91 3.107-6.105 5.08-8.634 5.08zM71.41 46.49l-7.698 4.4-1.787-.962 9.485-3.437zm-9.46 4.316l1.51.814c4.48 6.113 7.933 14.653 9.728 19.633L61.95 50.805z"/>
+      </svg>
+      <h4>Oculus Rift</h4>
+    </div>
+
+    <div class="device">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <path stroke-dasharray="300" d="M65.9 90c-.2 0-22.4-.9-27-1.2-1-.1-1.8-.4-2.2-1.1-1-1.4-.2-3.9-.1-3.9 0 0 10.7-35.5 11.1-37 .3-1.1 1.1-1.5 1.5-1.7 2.5 14 7 26.4 11.9 32.5l.1.1h.4l1-.2c.3 0 .5-.3.4-.6L51.2 9.4c0-.3-.3-.5-.6-.4l-1 .2h-.1-.1s-.1 0-.1.1l-.1.1s0 .1-.1.1v.1c-2.5 7.4-2.6 20.6-.2 34.6-.7.2-1.8.7-2.3 2.4-.2.6-10.2 30.2-12.4 36.7-.9 2.5-.8 4.5.2 5.9C35.7 91 38 91 38.1 91h27.7c.3 0 .5-.2.5-.5s-.2-.5-.4-.5zM50.1 10.1h.2l11.6 66.6h-.2c-4.8-6.1-9.2-18.4-11.6-32.3-2.4-13.8-2.4-26.9 0-34.3z"/>
+      </svg>
+      <h4>Desktop</h4>
+    </div>
+
+    <div class="device">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 104 104">
+        <path stroke-dasharray="230" fill-rule="evenodd" clip-rule="evenodd" d="M87.62 50.473H52.41v1.284l.66.006c.37 0 .856.196 1.196.347.456.2 7.63 3.23 8.2 3.575.57.345.2.92 0 1.47s-.74 2.07-.91 2.446-.314.462-.855.462H50.328 39.393c-.54 0-.683-.086-.854-.46s-.713-1.9-.912-2.448-.57-1.124 0-1.47c.57-.346 7.744-3.373 8.2-3.574.34-.15.826-.347 1.196-.347l.943-.01v-1.28H12.562c-1.416 0-2.562-1.16-2.562-2.594v-5.536c0-1.433 1.147-2.594 2.562-2.594h75.06c1.414 0 2.56 1.162 2.56 2.594v5.535c.002 1.432-1.146 2.593-2.56 2.593zM30.78 42.34c-1.426 0-2.583 1.17-2.583 2.616 0 1.444 1.156 2.615 2.583 2.615 1.427 0 2.583-1.17 2.583-2.614 0-1.445-1.155-2.615-2.582-2.615zm7.686 2.08c-.292 0-.53.24-.53.537s.238.536.53.536c.292 0 .53-.24.53-.536s-.237-.536-.53-.536zm7.518-2.08c-1.427 0-2.583 1.17-2.583 2.616 0 1.444 1.155 2.615 2.582 2.615 1.426 0 2.583-1.17 2.583-2.614 0-1.445-1.156-2.615-2.583-2.615zm7.858 0c-1.426 0-2.582 1.17-2.582 2.616 0 1.444 1.156 2.615 2.582 2.615 1.427 0 2.583-1.17 2.583-2.614 0-1.445-1.156-2.615-2.583-2.615z"/>
+      </svg>
+      <h4>Kinect</h4>
+    </div>
+
+    <div class="device">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <path stroke-dasharray="70" d="M42.73 39.12H30.98c-.82 0-1.47.66-1.47 1.47v11.75c0 .8.66 1.47 1.48 1.47h11.76c.8 0 1.46-.66 1.46-1.47V40.6c0-.82-.65-1.48-1.47-1.48zM13.46 35.45h-1.32c-.8 0-1.47.65-1.47 1.46v19.13c0 .8.66 1.47 1.47 1.47h1.32c.8 0 1.47-.66 1.47-1.47V36.9c0-.8-.65-1.45-1.47-1.45z"/>
+        <path stroke-dasharray="450" d="M92.8 37.6c.8 0 1.46-.66 1.46-1.47v-11.5c0-.8-.66-1.46-1.47-1.46h-2.16c-.9-2.06-2.97-3.5-5.37-3.5H11.62c-3.24 0-5.88 2.63-5.88 5.88v44.52c0 3.24 2.64 5.88 5.88 5.88H15c.2.6.74 1.04 1.4 1.04h4.3c.67 0 1.22-.45 1.4-1.05h7.48c.18.6.73 1.04 1.4 1.04h13.16c.66 0 1.2-.45 1.4-1.05h9.16c.18.6.74 1.04 1.4 1.04h4.3c.67 0 1.22-.45 1.4-1.05h23.47c2.32 0 4.32-1.35 5.28-3.3h2.24c.8 0 1.46-.66 1.46-1.47v-14.3c0-.82-.66-1.48-1.47-1.48h-1.65v-1.72h1.64c.8 0 1.46-.66 1.46-1.47V40.74c0-.82-.66-1.47-1.47-1.47h-1.65V37.6h1.64zm-25.1-13c0 .9-.74 1.6-1.63 1.6-.9 0-1.62-.7-1.62-1.6 0-.9.72-1.63 1.62-1.63.9 0 1.62.73 1.62 1.62zm-57.03-1.63c.9 0 1.62.73 1.62 1.62 0 .9-.74 1.6-1.63 1.6-.9 0-1.62-.7-1.62-1.6 0-.9.73-1.63 1.62-1.63zm0 49.67c-.9 0-1.62-.72-1.62-1.62s.73-1.62 1.62-1.62c.9 0 1.62.73 1.62 1.62s-.74 1.62-1.63 1.62zm53.78-1.62c0-.9.72-1.62 1.62-1.62.9 0 1.62.73 1.62 1.62s-.74 1.62-1.63 1.62c-.9 0-1.62-.72-1.62-1.62zm24.5-31.76h-12.1c-.82 0-1.47.65-1.47 1.47V52.2c0 .82.65 1.48 1.47 1.48h12.1v1.72h-15.8c-.8 0-1.47.66-1.47 1.47v14.3c0 .82.66 1.48 1.47 1.48H87.9c-.68.68-1.6 1.1-2.63 1.1H68.75c.7-.7 1.14-1.66 1.14-2.73 0-2.1-1.72-3.82-3.83-3.82-2.1 0-3.83 1.72-3.83 3.82 0 1.07.44 2.03 1.15 2.73h-1.53V63.7c0-.8-.65-1.46-1.47-1.46h-4.3c-.82 0-1.47.66-1.47 1.47v10.05H45.6V63.67c0-.8-.65-1.47-1.46-1.47H30.98c-.82 0-1.47.66-1.47 1.47v10.08H22.2v-3.98c0-.8-.66-1.47-1.47-1.47h-4.3c-.8 0-1.47.66-1.47 1.47v3.98h-1.58c.7-.7 1.15-1.66 1.15-2.73 0-2.1-1.72-3.82-3.83-3.82-1.06 0-2.03.44-2.72 1.14V27.27c.7.7 1.66 1.15 2.72 1.15 2.1 0 3.83-1.72 3.83-3.83 0-1.07-.44-2.04-1.15-2.73h1.58c-.04.13-.07.26-.07.4v3.34c0 .82.66 1.48 1.47 1.48H60.4c.8 0 1.47-.66 1.47-1.47v-3.33c0-.14-.02-.27-.06-.4h1.58c-.7.7-1.14 1.66-1.14 2.72 0 2.1 1.7 3.82 3.82 3.82 2.1 0 3.83-1.72 3.83-3.83 0-1.07-.45-2.04-1.16-2.73h16.53c1.12 0 2.1.5 2.78 1.3h-11.2c-.82 0-1.47.66-1.47 1.47v11.5c0 .8.65 1.46 1.47 1.46h12.1v1.66z"/>
+      </svg>
+      <h4>Embedded Devices</h4>
     </div>
   </div>
 </section>
 
-<section class="section section--uc">
+<section class="section section--obus">
+  <div data-slideshow class="slideshow">
+    <img src="assets/images/obus/1.jpg" class="slide">
+    <img src="assets/images/obus/2.jpg" class="slide">
+    <img src="assets/images/obus/3.jpg" class="slide">
+    <img src="assets/images/obus/4.jpg" class="slide">
+    <img src="assets/images/obus/5.jpg" class="slide">
+    <img src="assets/images/obus/6.jpg" class="slide">
+  </div>
   <div class="wrapper">
+    <div class="description">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 99.06">
+        <g fill="#3c3c3b">
+          <path d="M17.84 85.82a1.07 1.07 0 0 1-1.2-1v-2.48a1.07 1.07 0 0 1 1.2-1h.75a1 1 0 0 1 1.13 1v2.48a1 1 0 0 1-1.14 1h-.76zm.68-.62a.5.5 0 0 0 .53-.5v-2.2a.5.5 0 0 0-.54-.5h-.63a.5.5 0 0 0-.53.5v2.2a.5.5 0 0 0 .53.5h.65zM22 85.77v-4.35h1.76a1 1 0 0 1 1.18.93v.9a1 1 0 0 1-1.14 1h-1.1v1.55H22zm.68-3.73v1.58h1a.5.5 0 0 0 .53-.5v-.63a.5.5 0 0 0-.56-.47h-1zM29.88 85.74h-2.64V81.4h2.56v.6h-1.88v1.2h1.7v.62h-1.7v1.27h1.95v.6zM32.2 85.74V81.4h.7l1.7 3.06V81.4h.7v4.34h-.7l-1.72-3v3.05h-.7zM40.62 81.37h1.63a1.08 1.08 0 0 1 1.15 1.06v.3a.86.86 0 0 1-.34.68 1 1 0 0 1 .62.92v.24a1.1 1.1 0 0 1-1.14 1.14h-1.9v-4.34zm.7.6v1.2h.86a.48.48 0 0 0 .53-.48v-.25a.48.48 0 0 0-.52-.47h-.86zm0 1.8v1.32h1.13a.5.5 0 0 0 .53-.5v-.32a.52.52 0 0 0-.57-.5h-1.07zM47.83 85.72h-.74a1.07 1.07 0 0 1-1.2-1V81.3h.7v3.27a.5.5 0 0 0 .53.5h.63a.5.5 0 0 0 .53-.5v-3.3h.7v3.43a1 1 0 0 1-1.17 1.02zM51.32 85.67v-4.35H52v4.35h-.68zM56.8 85.66h-2.45V81.3H55v3.8h1.77v.6zM59 81.3h1.95a1 1 0 0 1 1.14 1v2.42a1 1 0 0 1-1.15 1H59v-4.34zm.7.62v3.1h1.17a.5.5 0 0 0 .53-.5v-2.1a.5.5 0 0 0-.54-.5h-1.2zM64.37 85.63v-4.35H65v4.35h-.63zM67.4 85.62v-4.35h.7l1.7 3.07v-3.07h.7v4.35h-.7l-1.7-3v3.05h-.7zM75.2 82.68v-.35a.5.5 0 0 0-.55-.5H74a.5.5 0 0 0-.52.5v2.2a.5.5 0 0 0 .53.5h.65a.5.5 0 0 0 .53-.5v-.6h-.87v-.63h1.58v1.37a1 1 0 0 1-1.14 1H74a1.07 1.07 0 0 1-1.2-1V82.2a1.07 1.07 0 0 1 1.2-1h.75a1 1 0 0 1 1.14 1v.5h-.7zM81.72 84.3v.2a.54.54 0 0 0 .6.5h.5a.52.52 0 0 0 .6-.5v-.18c0-.52-2.26-.63-2.26-1.83v-.4a1 1 0 0 1 1.1-.92h.54a1 1 0 0 1 1.2.9v.5h-.7v-.34a.5.5 0 0 0-.57-.48h-.36a.46.46 0 0 0-.5.44v.2c0 .63 2.25.75 2.25 1.77v.44a1.06 1.06 0 0 1-1.22.96h-.6a1.1 1.1 0 0 1-1.27-1v-.34h.7zM87.43 85.56v-1.73L86 81.2h.7l1 2 1-2h.7l-1.35 2.63v1.73h-.62zM92.07 84.27v.2a.54.54 0 0 0 .6.5h.5a.52.52 0 0 0 .6-.5v-.18c0-.52-2.26-.64-2.26-1.84v-.37a1 1 0 0 1 1.1-.92h.56a1.05 1.05 0 0 1 1.18.94v.48h-.7v-.33a.5.5 0 0 0-.56-.48h-.36a.46.46 0 0 0-.52.43v.2c0 .63 2.26.75 2.26 1.77v.44a1.06 1.06 0 0 1-1.22.95h-.6a1.1 1.1 0 0 1-1.26-1v-.35h.7zM97.6 85.53V81.8h-1.12v-.62h2.83v.62h-1v3.73h-.7zM104.12 85.5h-2.64v-4.34H104v.62h-1.9v1.2h1.7v.6h-1.7v1.3h1.96v.62zM106.42 85.5v-4.35h.73l1.2 2.64 1.2-2.66h.7v4.35h-.7v-3l-.9 2H108l-.93-2v3h-.7z"/>
+        </g>
+        <path d="M29.65 62.64a4 4 0 0 0 3.9-3.5L36.9 39.1a2.8 2.8 0 0 0-2.84-3.48H30a4 4 0 0 0-3.86 3.5l-3.35 20c-.3 2.12 1 3.47 2.78 3.46h4z" fill="#9a3824"/>
+        <path d="M105.26 30.5H99.9a11.44 11.44 0 0 0-5.3 1.33c0-.14 2.86-18.12 2.86-18.12H93l-4 24.8a8.63 8.63 0 0 0-.2.93l-.65 4.17c0 .3-.08.58-.1.86l-.65 4.35a7.24 7.24 0 0 1-6.87 6.37h-6.8c-3.28 0-5.47-2.63-4.9-6.36l5.57-35.1H70l-2.53 15.6a8.3 8.3 0 0 0-5.8-2.2H47.3l-1.4 8.84c.5-5-2.78-9.23-8.46-9.23h-7.7a12 12 0 0 0-11.68 9.83l-4.1 26.1c-.85 5.28 2.56 9.83 8.53 9.83h7.7a11.8 11.8 0 0 0 11.44-9.65l-1.47 9.3h17.07c5.84 0 10.66-5 11.62-10.92l.4-2.28a9.77 9.77 0 0 0 3.5.64h7.5A11.88 11.88 0 0 0 91.2 51.7a29.34 29.34 0 0 0 7.6 4.74c4.7 2.22 8.94 4.24 8.48 7.17l-.46 2.8c-.52 3.92-4.1 6.07-8.2 6.07h-4.77c-4 0-6.65-2.67-6.06-6.45l.45-2.67h-4.5l-.6 3.6c-.84 5.33 3.07 10 9.72 10h5.4c6.72 0 12-3.86 12.92-9.6l.64-4.42c.9-5.74-5.6-8.73-11.08-11.4-4.1-2-8-4.12-8.07-7.43.04-.38.1-.8.14-1.25l.5-3.15a6.75 6.75 0 0 1 6.5-4.74h4.25c3.64 0 6.12 2.54 5.6 6.06l-.52 3.45h4.5l.64-4.38c.78-5.17-2.8-9.6-9.06-9.6zm-64 7l-3.88 24.24a7.3 7.3 0 0 1-6.93 6.35h-7c-3.27 0-5.46-2.64-4.88-6.37l3.85-24.27a7.3 7.3 0 0 1 6.87-6.37h7.05c3.28 0 5.46 2.65 4.88 6.37zM65 57.7l-.58 3.65a7.37 7.37 0 0 1-7 6.35H45.3l2.63-16.6h11.7c3.52 0 5.9 2.74 5.37 6.6zm.45-20.23L65 40.74a7.07 7.07 0 0 1-6.87 6h-9.5L51 31.5h9.57c3.3 0 5.43 2.5 4.9 5.97z" fill="#3c3c3b"/>
+        <path fill="none" d="M0 0h128v99.06H0z"/>
+      </svg>
+      <p>
+        OBUS es una activación del espacio que ocupa como soporte pantallas distribuidas
+      a lo largo del edificio de Comunicaciones Pontificia Universidad Católica de Chile.
+      </p>
+      <p>
+        OBUS cuenta con un sistema de despliegue de información y un sistema de control central, donde el priemro consta de
+        un video-wall de 110", 13 módulos de pantallas touch de 25” y 1 portrait de 40" touch, y el segundo, de 1 servidor dedicado
+        y 8 cámaras de seguridad.
+      </p>
+      <p>
+        Este sistema alberga cerca de 20 aplicaciones distintas, donde el usuario puede interactuar con ellas, obtener la última información oficial
+        de la facultad, ubicarse dentro de la facultad así como a cualquier funcionario y dejar sus mensajes. El sistema de control central
+        tiene acceso exclusivo para sus administradores, editores y ayudantes, en donde pueden programar los contenidos que serán mostrados en
+        las distintas secciones de noticias.
+        <br>
+        El panel de administración que dispone de documentación completa.
+      </p>
 
+      <p>Desarrollo, programación e implementación <br>
+Pango - Frankenstudio - Pontificia Universidad Católica de Chile</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--falabella">
+  <div class="wrapper">
+    <div class="description">
+      <h1 class="title">Probador Virtual Falabella</h1>
+      <p>El "Probador Virtual" de Falabella es una activación interactiva encargada por el departamento de Marketing de la compañía y
+desarrollada la oficina Frankenstudio.</p>
+      <p>Este dispositivo de realidad aumentada basa su funcionamiento en la utilización de tecnología MoCap (Motion Capture),
+sensores infra-rojos, cámaras coordinadas y modelos tridimensionales interactivos que permiten generar la experiencia de
+visualizar las prendas en tiempo real y sobre el cuerpo de las visitantes.
+Los módulos están constituidos por dos estructuras de gran escala con pantallas de 55" y 72".</p>
+      <p>La pantalla principal actúa como "espejo" mientras que las pantallas secundarias permiten desplegar,
+de forma aleatoria, otras sesiones grabadas previamente. Cuando la persona sube al podio, activa los sensores infra-rojos,
+la aplicación identifica la estructura de huesos del usuario y posiciona sobre su figura los modelos tridimensionales
+de las prendas de la colección. En este sentido el manejo de la aplicación es por el movimiento de las manos y la sesión
+termina con la grabación voluntaria de la prueba.</p>
+      <p>Colaboración Programación e integración de Kinect, Arduino <br>
+Pango - Frankenstudio</p>
+    </div>
   </div>
 </section>
 
 <section class="section section--cocacola">
   <div class="wrapper">
-
+    <div class="description">
+      <h1 class="title">Coca Cola</h1>
+      <p>El "Taxi del Movimiento" de Coca Cola es una activación de marca para la agencia McCANN y desarrollado por la oficina Frankenstudio.
+El propósito de la campaña es promover entre las personas el movimiento como medio para alcanzar la felicidad;
+combatiendo el sedentarismo y facilitando, desde dispositivos insertos en situaciones convencionales, la actividad física y el deporte.</p>
+      <p>Para lograr este objetivo se diseña e implementa un mecanismo que que se aloja en la zona del copiloto de un taxi tradicional,
+y que por medio de un sistema de pedales modificados, permite la cuantificación del pedaleo y su traducción monetaria.</p>
+      <p>De esta manera el monto que genera cada pasajero a través de su ejercicio es descontado del total producido por el viaje.
+El sistema basa su operación en el movimiento de pedales, similares a los utilizados por una bicicleta,
+pero en este caso el giro debe ser registrado por un sensor digital y transferido a una aplicación montada en un Tablet Android.</p>
+      <p>Tras el lanzamiento del comercial grabado en Viña del Mar, y como consecuencia del explosivo éxito en las redes sociales,
+se decidió implementar el Taxi de Movimiento de forma operativa en la ciudad de Santiago durante 4 semanas,
+apareciendo en distintos programas de televisión y en diversos noticiarios nacionales e internacionales.</p>
+      <p>La campaña tuve un gran éxito en los medios, obteniendo innumerables premios y distinciones en festivales nacionales e internacionales.</p>
+      <p>Colaboración en desarrollo de aplicación para tablet <br>
+Pango - Frankenstudio</p>
+    </div>
   </div>
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser-polyfill.min.js"></script>
