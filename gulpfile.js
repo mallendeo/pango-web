@@ -68,6 +68,7 @@ gulp.task('copy-html', () => {
 
 gulp.task('watch', ['build'], () => {
   browserSync.init({
+    open: false,
     server: {
       baseDir: './dist'
     }
