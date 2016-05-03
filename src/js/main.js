@@ -138,25 +138,42 @@ const animateBackground = tl => {
         }, startTime + .4)
     }
 
-    // mousemove 3d effect
-    const update = (elem, event) => {
+    // 3d rotation
+    const rotate = (rx, ry) => {
+      TweenMax.to(wrapper, .75, {
+          rotationX: ry,
+          rotationY: rx,
+          ease: 'Power0.easenone'
+        })
+    }
+
+    // update rotation values
+    const update = (elem, event, tilt) => {
+      if (tilt) {
+        const tiltLR = event.gamma
+        const tiltFB = event.beta
+        rotate(tiltLR / 1.5, tiltFB / 1.5)
+
+        return
+      }
+
       const xpos = event.layerX || event.offsetX
       const ypos = event.layerY || event.offsetY
 
       const ax = -(window.innerWidth / 2 - xpos) / 40
       const ay = (window.innerHeight / 2 - ypos) / 10
-
-      TweenMax.to(wrapper, .75, {
-          rotationX: ay,
-          rotationY: ax,
-          ease: 'Power0.easenone'
-        })
+      rotate(ax, ay)
     }
 
     // get element for mousemove event tracking
     // on top of all other layers
     const trackerLayer = document.querySelector('.mouse-tracker-layer')
     trackerLayer.addEventListener('mousemove', e => raf(() => update(wrapper, e)))
+
+    if (window.DeviceOrientationEvent) {
+      window.addEventListener('deviceorientation', e =>
+        raf(() => update(wrapper, e, true)))
+    }
   }
 
   createLines(50)
@@ -239,7 +256,7 @@ const cumulativeOffset = elem => {
   let top = 0
   let left = 0
   do {
-    top += elem.offsetTop  || 0
+    top += elem.offsetTop || 0
     left += elem.offsetLeft || 0
     elem = elem.offsetParent
   } while(elem)
@@ -251,10 +268,13 @@ const trigger = document.querySelector('.section--about')
 const draw = drawDevices()
 draw.init()
 let triggerOffset = cumulativeOffset(trigger).top
+
 document.addEventListener('scroll', () => {
   raf(() => {
-    console.log(document.body.scrollTop, triggerOffset)
-    if (!draw.triggered && document.body.scrollTop > triggerOffset) {
+    const top = (document.documentElement && document.documentElement.scrollTop)
+      || document.body.scrollTop
+
+    if (!draw.triggered && top > triggerOffset) {
       drawDevices().draw()
       draw.triggered = true
     }
