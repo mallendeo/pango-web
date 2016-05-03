@@ -19,7 +19,7 @@ gulp.task('default', ['build'])
 gulp.task('clean', () => del.sync([ 'dist/**/*' ]))
 
 gulp.task('stylus', () => {
-  gulp.src('src/style/*.styl')
+  gulp.src('src/style/main.styl')
     .pipe(stylus({
         use: nib(),
         compress: gutil.env.dist
