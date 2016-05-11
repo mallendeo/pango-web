@@ -2,30 +2,151 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
+}
 
-  .description {
-    position: relative;
-    padding: 2rem 1.4rem;
-    width: 30em;
-    margin: auto;
-    h1 {
-      font-size: 2rem;
+.brand-logo {
+  width: 30%;
+  display: block;
+  width: 960px
+  padding: 2em 20em;
+  background: #fff;
+}
+
+.wrapper {
+  margin: auto;
+  width: 960px;
+  position: relative;
+}
+
+.project-details {
+  overflow: hidden;
+  position: relative;
+  z-index: 9;
+}
+
+.description {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: alpha(introBg, .9);
+  padding: 2rem 1.4rem;
+  width: 50%;
+  min-height: 520px;
+  color: #f0f0f0;
+  h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 1.4em;
+    padding-top: 1em;
+  }
+  p {
+    padding: 1em;
+    font-size: .9em;
+    &:nth-of-type(n+2) {
+      display: none;
     }
-    p {
-      padding: 1rem;
-      font-size: 1.2rem;
+
+    &:last-of-type {
+      display: block;
     }
+  }
+
+  &.more p:nth-of-type(n+2) {
+    display: block;
   }
 }
 
-.section--intro {
-  overflow: hidden;
+.button--view-project {
+  background: #fff;
+  color: introBg;
+  padding: .4em 1em;
+  margin: auto;
+  display: block;
+}
+.hide {
+  display: none;
+}
+
+.section {
+  &.section--intro {
+    overflow: hidden;
+  }
+  &.section--about {
+    z-index: 9;
+  }
+}
+
+// testing
+//
+[data-project] {
+  overflow hidden
+  .brand-logo {
+    z-index: 9;
+    position: relative;
+  }
+  .wrapper {
+    margin: 10em auto 0 auto;
+    z-index: 1;
+    &:after {
+      content: '';
+      display: block;
+      size: 12em;
+      height: 12em;
+      transform: rotateZ(-45deg) scaleX(10);
+      absolute: top 6em left 6em;
+    }
+  }
+}
+.section--falabella .wrapper {
+  &:after {
+    background: #BCD400;
+  }
+}
+.section--obus .wrapper {
+  &:after {
+    background: #3D7EDB;
+  }
+}
+.section--cocacola .wrapper {
+  &:after {
+    background: #F40000;
+  }
+}
+
+.section--portfolio {
+  text-align: center;
+  padding-top: 5em;
+  min-height: 0;
+  h1 {
+    line-height: 1;
+    margin: 0;
+    font-size: 7em;
+    font-weight: 200;
+    text-transform: uppercase;
+    color: introBg;
+    span {
+      display: inline-block;
+    }
+  }
+
+  .wrapper {
+    overflow: hidden;
+    border-radius: 0;
+  }
+
+  // animation elements
+  .square-portfolio-animation {
+    absolute: bottom 0 left 0;
+    size: 100%;
+    background: introBg;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+  }
 }
 
 .section--about {
   background: introBg;
   padding: .4em 0 4em 0;
-  display: inline-block;
   p {
     width: 80%;
     padding: 4em;
@@ -67,48 +188,59 @@
   }
 }
 
-.section--obus {
-  display: flex;
-  .description {
-    background: alpha(introBg, .9);
-    color: #f0f0f0;
-    p {
-      font-size: .8em;
-    }
-    svg {
-      width: 50%;
-      margin: auto;
-      display: block;
-    }
-  }
-  .slideshow {
-    margin: auto;
+.slideshow {
+  size: 100%;
+  z-index: -1;
+  absolute: top 0 left 0;
+  &:after {
+    content: '';
     absolute: top 0 left 0;
     size: 100%;
-    overflow: hidden;
-    &:after {
-      content: '';
-      absolute: top 0 left 0;
-      size: 100%;
-      background-color: #4990f6;
-      mix-blend-mode: multiply;
-      background-image: radial-gradient(rgba(0,0,0,.2) 20%, transparent 20%);
-      background-size: 6px 6px;
+    //mix-blend-mode: multiply;
+    background-image: radial-gradient(rgba(0,0,0,.2) 20%, transparent 20%);
+    background-size: 5px 5px;
+  }
+  .slide {
+    will-change: opacity;
+    transform: translateZ(0);
+    display: block;
+    absolute: top 0 left 0;
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+footer {
+  text-align: center;
+  padding-top: 8em;
+  padding-bottom: 2em;
+}
+
+@media only screen and (max-width: 960px) {
+  .section {
+    width: 100%;
+    p {
+      padding: 0;
+      width: 70%;
+      margin: auto;
     }
-    .slide {
-      display: block;
-      absolute: top 0 left 0;
-      size: 100% auto;
+    .brand-logo {
+      width: 100%;
+      padding: 2em 4em;
+      max-height: 20em;
+    }
+    .wrapper {
+      width: 100%;
+      .description {
+        width: 100%;
+      }
     }
   }
 }
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .section--about {
-    p {
-      padding: 0;
-      font-size: 1.8em;
-    }
+    font-size: .5rem;
     .devices {
       padding-top: 1rem;
       .device {
@@ -126,25 +258,45 @@
     }
   }
 
-  .description {
-    width: 100%;
-    p:nth-of-type(n+2) {
-      display: none;
+  .section {
+    overflow: hidden;
+
+    .wrapper {
+      margin-top: 4em;
+    }
+
+    p {
+      font-size: 1.2em;
+      width: 100%;
     }
   }
 
-  .slideshow div {
-    position fixed
-    will-change: background
-    transform: translateZ(-1px);
-    background-size: 100%;
+  .section--about {
+    p {
+      font-size: 2em;
+      width: 80%;
+    }
   }
+
+  .section--portfolio {
+    .wrapper {
+      height: 100%;
+      margin-top: 0;
+      padding-top: 2em;
+      padding-bottom: 2em;
+    }
+    padding-top: 0;
+    h1 {
+      height: 100%;
+      font-size: 3em;
+    }
+  }
+  .section--obus .wrapper {
+    margin-top: 0;
+  }
+
 
   .pango-logo-group {
     transform: scale(.6);
-  }
-
-  .section--about {
-    font-size: .5rem;
   }
 }
