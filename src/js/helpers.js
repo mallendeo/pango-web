@@ -1,5 +1,3 @@
-import raf from 'raf'
-
 export const addClass = (el, className) => {
   el.classList ? el.classList.add(className) : el.className += ' ' + className
 }
@@ -18,18 +16,15 @@ export const cumulativeOffset = elem => {
   return { top, left }
 }
 
-export const scrollTrigger = (elem, triggered, callback) => {
-  const trigger = document.querySelector(elem)
-  let triggerOffset = cumulativeOffset(trigger).top
-
-  document.addEventListener('scroll', () => {
-    raf(() => {
-      const top = (document.documentElement && document.documentElement.scrollTop)
-        || document.body.scrollTop
-
-      if (!triggered && top > triggerOffset) {
-        callback()
-      }
-    })
+// replaces the element text with an array of spans
+// and returns it
+export const splitTextInSpans = elem => {
+  const letters = elem.textContent.split('')
+  elem.innerHTML = ''
+  return letters.map(letter => {
+    const span = document.createElement('span')
+    span.textContent = letter
+    elem.appendChild(span)
+    return span
   })
 }

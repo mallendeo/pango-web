@@ -2,9 +2,17 @@
 import forEach      from 'lodash.foreach'
 import random       from 'lodash.random'
 import raf          from 'raf'
-import { addClass } from './helpers'
+import {
+  addClass,
+  splitTextInSpans
+} from './helpers'
 
 const intro = () => {
+  const init = () => {
+    const cover = document.querySelector('.cover')
+    addClass(cover, 'hide')
+  }
+
   const animateLogo = tl => {
     const maxWindowSize = Math.max(window.innerHeight, window.innerWidth)
 
@@ -81,16 +89,7 @@ const intro = () => {
       }, 1.8)
 
     forEach(words, (word, i) => {
-      const letters = word.textContent.split('')
-      word.innerHTML = ''
-
-      for (let letter of letters) {
-        const span = document.createElement('span')
-        span.textContent = letter
-        word.appendChild(span)
-      }
-
-      const spans = word.querySelectorAll('span')
+      const spans = splitTextInSpans(word)
       forEach(spans, (span, j) => {
         let tlWords = new TimelineMax()
         tlWords.set(span, { y: i == 0 ? 40 : 30, opacity: 1 })
@@ -179,6 +178,7 @@ const intro = () => {
   }
 
   return {
+    init,
     animateLogo,
     animateWords,
     animateBackground

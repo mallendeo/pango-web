@@ -1,5 +1,4 @@
 /* global TweenMax, Waypoint */
-import 'waypoints/lib/noframework.waypoints'
 import forEach  from 'lodash.foreach'
 
 const about = () => {
@@ -55,11 +54,12 @@ const about = () => {
   const draw = drawDevices()
   draw.init()
 
-  new Waypoint({
+  let waypoint = new Waypoint({
     element: document.querySelector('.section--about'),
-    handler: function() {
+    offset: '25%',
+    handler: () => {
       drawDevices().draw()
-      this.destroy()
+      waypoint.destroy()
     }
   })
 
