@@ -13,8 +13,7 @@
     "lodash.foreach": "^4.2.0",
     "lodash.random": "^3.1.4",
     "raf": "^3.2.0",
-    "sanitize.css": "^3.3.0",
-    "waypoints": "^4.0.0"
+    "sanitize.css": "^3.3.0"
   },
   "devDependencies": {
     "babel-core": "^6.0.14",
