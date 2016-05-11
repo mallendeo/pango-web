@@ -9,19 +9,24 @@
     <link rel="stylesheet" href="main.css">
   </head>
 <body>
+<div class="cover">
+  <svg viewBox="-1 -1 34 34" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 32c8.837 0 16-7.163 16-16S24.837 0 16 0 0 7.163 0 16s7.163 16 16 16z" stroke="#292F36" fill="none"/>
+  </svg>
+</div>
 <section class="section section--intro">
 
   <!-- Menu -->
   <nav class="top-nav">
     <ul class="nav-list">
       <li class="nav-list--item">
-        <a href="#">Quienes Somos</a>
+        <a href="#about">Quienes Somos</a>
       </li>
       <li class="nav-list--item">
-        <a href="#">Portafolio</a>
+        <a href="#portfolio">Portafolio</a>
       </li>
       <li class="nav-list--item">
-        <a href="#">Contacto</a>
+        <a href="#contact">Contacto</a>
       </li>
     </ul>
   </nav>
@@ -108,7 +113,7 @@
 
   <div class="bg-lines-wrapper"></div>
 </section>
-<section class="section section--about">
+<section id="about" class="section section--about">
   <p>En Pango <strong>creamos</strong> plataformas interactivas de alto impacto.
   <strong>Desarrollamos</strong> e integramos soluciones tecnológicas <strong>basadas
   en la experiencia del usuario</strong>, el diseño y la interacción
@@ -140,7 +145,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 104 104">
         <path stroke-dasharray="230" fill-rule="evenodd" clip-rule="evenodd" d="M87.62 50.473H52.41v1.284l.66.006c.37 0 .856.196 1.196.347.456.2 7.63 3.23 8.2 3.575.57.345.2.92 0 1.47s-.74 2.07-.91 2.446-.314.462-.855.462H50.328 39.393c-.54 0-.683-.086-.854-.46s-.713-1.9-.912-2.448-.57-1.124 0-1.47c.57-.346 7.744-3.373 8.2-3.574.34-.15.826-.347 1.196-.347l.943-.01v-1.28H12.562c-1.416 0-2.562-1.16-2.562-2.594v-5.536c0-1.433 1.147-2.594 2.562-2.594h75.06c1.414 0 2.56 1.162 2.56 2.594v5.535c.002 1.432-1.146 2.593-2.56 2.593zM30.78 42.34c-1.426 0-2.583 1.17-2.583 2.616 0 1.444 1.156 2.615 2.583 2.615 1.427 0 2.583-1.17 2.583-2.614 0-1.445-1.155-2.615-2.582-2.615zm7.686 2.08c-.292 0-.53.24-.53.537s.238.536.53.536c.292 0 .53-.24.53-.536s-.237-.536-.53-.536zm7.518-2.08c-1.427 0-2.583 1.17-2.583 2.616 0 1.444 1.155 2.615 2.582 2.615 1.426 0 2.583-1.17 2.583-2.614 0-1.445-1.156-2.615-2.583-2.615zm7.858 0c-1.426 0-2.582 1.17-2.582 2.616 0 1.444 1.156 2.615 2.582 2.615 1.427 0 2.583-1.17 2.583-2.614 0-1.445-1.156-2.615-2.583-2.615z"/>
       </svg>
-      <h4>Kinect</h4>
+      <h4>Motion</h4>
     </div>
 
     <div class="device">
@@ -151,94 +156,149 @@
       <h4>Embedded Devices</h4>
     </div>
   </div>
+  <div class="clearfix"></div>
 </section>
 
-<section class="section section--obus">
-  <div data-slideshow class="slideshow">
-    <img src="assets/images/obus/1.jpg" class="slide">
-    <img src="assets/images/obus/2.jpg" class="slide">
-    <img src="assets/images/obus/3.jpg" class="slide">
-    <img src="assets/images/obus/4.jpg" class="slide">
-    <img src="assets/images/obus/5.jpg" class="slide">
-    <img src="assets/images/obus/6.jpg" class="slide">
-  </div>
+<!-- Portafolio -->
+<section id="portfolio" class="section section--portfolio">
   <div class="wrapper">
-    <div class="description">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 99.06">
-        <g fill="#fff">
-          <path d="M17.84 85.82a1.07 1.07 0 0 1-1.2-1v-2.48a1.07 1.07 0 0 1 1.2-1h.75a1 1 0 0 1 1.13 1v2.48a1 1 0 0 1-1.14 1h-.76zm.68-.62a.5.5 0 0 0 .53-.5v-2.2a.5.5 0 0 0-.54-.5h-.63a.5.5 0 0 0-.53.5v2.2a.5.5 0 0 0 .53.5h.65zM22 85.77v-4.35h1.76a1 1 0 0 1 1.18.93v.9a1 1 0 0 1-1.14 1h-1.1v1.55H22zm.68-3.73v1.58h1a.5.5 0 0 0 .53-.5v-.63a.5.5 0 0 0-.56-.47h-1zM29.88 85.74h-2.64V81.4h2.56v.6h-1.88v1.2h1.7v.62h-1.7v1.27h1.95v.6zM32.2 85.74V81.4h.7l1.7 3.06V81.4h.7v4.34h-.7l-1.72-3v3.05h-.7zM40.62 81.37h1.63a1.08 1.08 0 0 1 1.15 1.06v.3a.86.86 0 0 1-.34.68 1 1 0 0 1 .62.92v.24a1.1 1.1 0 0 1-1.14 1.14h-1.9v-4.34zm.7.6v1.2h.86a.48.48 0 0 0 .53-.48v-.25a.48.48 0 0 0-.52-.47h-.86zm0 1.8v1.32h1.13a.5.5 0 0 0 .53-.5v-.32a.52.52 0 0 0-.57-.5h-1.07zM47.83 85.72h-.74a1.07 1.07 0 0 1-1.2-1V81.3h.7v3.27a.5.5 0 0 0 .53.5h.63a.5.5 0 0 0 .53-.5v-3.3h.7v3.43a1 1 0 0 1-1.17 1.02zM51.32 85.67v-4.35H52v4.35h-.68zM56.8 85.66h-2.45V81.3H55v3.8h1.77v.6zM59 81.3h1.95a1 1 0 0 1 1.14 1v2.42a1 1 0 0 1-1.15 1H59v-4.34zm.7.62v3.1h1.17a.5.5 0 0 0 .53-.5v-2.1a.5.5 0 0 0-.54-.5h-1.2zM64.37 85.63v-4.35H65v4.35h-.63zM67.4 85.62v-4.35h.7l1.7 3.07v-3.07h.7v4.35h-.7l-1.7-3v3.05h-.7zM75.2 82.68v-.35a.5.5 0 0 0-.55-.5H74a.5.5 0 0 0-.52.5v2.2a.5.5 0 0 0 .53.5h.65a.5.5 0 0 0 .53-.5v-.6h-.87v-.63h1.58v1.37a1 1 0 0 1-1.14 1H74a1.07 1.07 0 0 1-1.2-1V82.2a1.07 1.07 0 0 1 1.2-1h.75a1 1 0 0 1 1.14 1v.5h-.7zM81.72 84.3v.2a.54.54 0 0 0 .6.5h.5a.52.52 0 0 0 .6-.5v-.18c0-.52-2.26-.63-2.26-1.83v-.4a1 1 0 0 1 1.1-.92h.54a1 1 0 0 1 1.2.9v.5h-.7v-.34a.5.5 0 0 0-.57-.48h-.36a.46.46 0 0 0-.5.44v.2c0 .63 2.25.75 2.25 1.77v.44a1.06 1.06 0 0 1-1.22.96h-.6a1.1 1.1 0 0 1-1.27-1v-.34h.7zM87.43 85.56v-1.73L86 81.2h.7l1 2 1-2h.7l-1.35 2.63v1.73h-.62zM92.07 84.27v.2a.54.54 0 0 0 .6.5h.5a.52.52 0 0 0 .6-.5v-.18c0-.52-2.26-.64-2.26-1.84v-.37a1 1 0 0 1 1.1-.92h.56a1.05 1.05 0 0 1 1.18.94v.48h-.7v-.33a.5.5 0 0 0-.56-.48h-.36a.46.46 0 0 0-.52.43v.2c0 .63 2.26.75 2.26 1.77v.44a1.06 1.06 0 0 1-1.22.95h-.6a1.1 1.1 0 0 1-1.26-1v-.35h.7zM97.6 85.53V81.8h-1.12v-.62h2.83v.62h-1v3.73h-.7zM104.12 85.5h-2.64v-4.34H104v.62h-1.9v1.2h1.7v.6h-1.7v1.3h1.96v.62zM106.42 85.5v-4.35h.73l1.2 2.64 1.2-2.66h.7v4.35h-.7v-3l-.9 2H108l-.93-2v3h-.7z"/>
-          <path d="M29.65 62.64a4 4 0 0 0 3.9-3.5L36.9 39.1a2.8 2.8 0 0 0-2.84-3.48H30a4 4 0 0 0-3.86 3.5l-3.35 20c-.3 2.12 1 3.47 2.78 3.46h4z"/>
-          <path d="M105.26 30.5H99.9a11.44 11.44 0 0 0-5.3 1.33c0-.14 2.86-18.12 2.86-18.12H93l-4 24.8a8.63 8.63 0 0 0-.2.93l-.65 4.17c0 .3-.08.58-.1.86l-.65 4.35a7.24 7.24 0 0 1-6.87 6.37h-6.8c-3.28 0-5.47-2.63-4.9-6.36l5.57-35.1H70l-2.53 15.6a8.3 8.3 0 0 0-5.8-2.2H47.3l-1.4 8.84c.5-5-2.78-9.23-8.46-9.23h-7.7a12 12 0 0 0-11.68 9.83l-4.1 26.1c-.85 5.28 2.56 9.83 8.53 9.83h7.7a11.8 11.8 0 0 0 11.44-9.65l-1.47 9.3h17.07c5.84 0 10.66-5 11.62-10.92l.4-2.28a9.77 9.77 0 0 0 3.5.64h7.5A11.88 11.88 0 0 0 91.2 51.7a29.34 29.34 0 0 0 7.6 4.74c4.7 2.22 8.94 4.24 8.48 7.17l-.46 2.8c-.52 3.92-4.1 6.07-8.2 6.07h-4.77c-4 0-6.65-2.67-6.06-6.45l.45-2.67h-4.5l-.6 3.6c-.84 5.33 3.07 10 9.72 10h5.4c6.72 0 12-3.86 12.92-9.6l.64-4.42c.9-5.74-5.6-8.73-11.08-11.4-4.1-2-8-4.12-8.07-7.43.04-.38.1-.8.14-1.25l.5-3.15a6.75 6.75 0 0 1 6.5-4.74h4.25c3.64 0 6.12 2.54 5.6 6.06l-.52 3.45h4.5l.64-4.38c.78-5.17-2.8-9.6-9.06-9.6zm-64 7l-3.88 24.24a7.3 7.3 0 0 1-6.93 6.35h-7c-3.27 0-5.46-2.64-4.88-6.37l3.85-24.27a7.3 7.3 0 0 1 6.87-6.37h7.05c3.28 0 5.46 2.65 4.88 6.37zM65 57.7l-.58 3.65a7.37 7.37 0 0 1-7 6.35H45.3l2.63-16.6h11.7c3.52 0 5.9 2.74 5.37 6.6zm.45-20.23L65 40.74a7.07 7.07 0 0 1-6.87 6h-9.5L51 31.5h9.57c3.3 0 5.43 2.5 4.9 5.97z"/>
-        </g>
-      </svg>
-      <p>
-        OBUS es una activación del espacio que ocupa como soporte pantallas distribuidas
-      a lo largo del edificio de Comunicaciones Pontificia Universidad Católica de Chile.
-      </p>
-      <p>
-        OBUS cuenta con un sistema de despliegue de información y un sistema de control central, donde el priemro consta de
-        un video-wall de 110", 13 módulos de pantallas touch de 25” y 1 portrait de 40" touch, y el segundo, de 1 servidor dedicado
-        y 8 cámaras de seguridad.
-      </p>
-      <p>
-        Este sistema alberga cerca de 20 aplicaciones distintas, donde el usuario puede interactuar con ellas, obtener la última información oficial
-        de la facultad, ubicarse dentro de la facultad así como a cualquier funcionario y dejar sus mensajes. El sistema de control central
-        tiene acceso exclusivo para sus administradores, editores y ayudantes, en donde pueden programar los contenidos que serán mostrados en
-        las distintas secciones de noticias.
-        <br>
-        El panel de administración que dispone de documentación completa.
-      </p>
+    <h1>Portafolio</h1>
+  </div>
+</section>
 
-      <p>Desarrollo, programación e implementación <br>
-Pango - Frankenstudio - Pontificia Universidad Católica de Chile</p>
+<section class="section section--obus" data-project="obus">
+  <div class="wrapper">
+    <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 99.06">
+      <g fill="#292F36">
+        <path d="M17.84 85.82a1.07 1.07 0 0 1-1.2-1v-2.48a1.07 1.07 0 0 1 1.2-1h.75a1 1 0 0 1 1.13 1v2.48a1 1 0 0 1-1.14 1h-.76zm.68-.62a.5.5 0 0 0 .53-.5v-2.2a.5.5 0 0 0-.54-.5h-.63a.5.5 0 0 0-.53.5v2.2a.5.5 0 0 0 .53.5h.65zM22 85.77v-4.35h1.76a1 1 0 0 1 1.18.93v.9a1 1 0 0 1-1.14 1h-1.1v1.55H22zm.68-3.73v1.58h1a.5.5 0 0 0 .53-.5v-.63a.5.5 0 0 0-.56-.47h-1zM29.88 85.74h-2.64V81.4h2.56v.6h-1.88v1.2h1.7v.62h-1.7v1.27h1.95v.6zM32.2 85.74V81.4h.7l1.7 3.06V81.4h.7v4.34h-.7l-1.72-3v3.05h-.7zM40.62 81.37h1.63a1.08 1.08 0 0 1 1.15 1.06v.3a.86.86 0 0 1-.34.68 1 1 0 0 1 .62.92v.24a1.1 1.1 0 0 1-1.14 1.14h-1.9v-4.34zm.7.6v1.2h.86a.48.48 0 0 0 .53-.48v-.25a.48.48 0 0 0-.52-.47h-.86zm0 1.8v1.32h1.13a.5.5 0 0 0 .53-.5v-.32a.52.52 0 0 0-.57-.5h-1.07zM47.83 85.72h-.74a1.07 1.07 0 0 1-1.2-1V81.3h.7v3.27a.5.5 0 0 0 .53.5h.63a.5.5 0 0 0 .53-.5v-3.3h.7v3.43a1 1 0 0 1-1.17 1.02zM51.32 85.67v-4.35H52v4.35h-.68zM56.8 85.66h-2.45V81.3H55v3.8h1.77v.6zM59 81.3h1.95a1 1 0 0 1 1.14 1v2.42a1 1 0 0 1-1.15 1H59v-4.34zm.7.62v3.1h1.17a.5.5 0 0 0 .53-.5v-2.1a.5.5 0 0 0-.54-.5h-1.2zM64.37 85.63v-4.35H65v4.35h-.63zM67.4 85.62v-4.35h.7l1.7 3.07v-3.07h.7v4.35h-.7l-1.7-3v3.05h-.7zM75.2 82.68v-.35a.5.5 0 0 0-.55-.5H74a.5.5 0 0 0-.52.5v2.2a.5.5 0 0 0 .53.5h.65a.5.5 0 0 0 .53-.5v-.6h-.87v-.63h1.58v1.37a1 1 0 0 1-1.14 1H74a1.07 1.07 0 0 1-1.2-1V82.2a1.07 1.07 0 0 1 1.2-1h.75a1 1 0 0 1 1.14 1v.5h-.7zM81.72 84.3v.2a.54.54 0 0 0 .6.5h.5a.52.52 0 0 0 .6-.5v-.18c0-.52-2.26-.63-2.26-1.83v-.4a1 1 0 0 1 1.1-.92h.54a1 1 0 0 1 1.2.9v.5h-.7v-.34a.5.5 0 0 0-.57-.48h-.36a.46.46 0 0 0-.5.44v.2c0 .63 2.25.75 2.25 1.77v.44a1.06 1.06 0 0 1-1.22.96h-.6a1.1 1.1 0 0 1-1.27-1v-.34h.7zM87.43 85.56v-1.73L86 81.2h.7l1 2 1-2h.7l-1.35 2.63v1.73h-.62zM92.07 84.27v.2a.54.54 0 0 0 .6.5h.5a.52.52 0 0 0 .6-.5v-.18c0-.52-2.26-.64-2.26-1.84v-.37a1 1 0 0 1 1.1-.92h.56a1.05 1.05 0 0 1 1.18.94v.48h-.7v-.33a.5.5 0 0 0-.56-.48h-.36a.46.46 0 0 0-.52.43v.2c0 .63 2.26.75 2.26 1.77v.44a1.06 1.06 0 0 1-1.22.95h-.6a1.1 1.1 0 0 1-1.26-1v-.35h.7zM97.6 85.53V81.8h-1.12v-.62h2.83v.62h-1v3.73h-.7zM104.12 85.5h-2.64v-4.34H104v.62h-1.9v1.2h1.7v.6h-1.7v1.3h1.96v.62zM106.42 85.5v-4.35h.73l1.2 2.64 1.2-2.66h.7v4.35h-.7v-3l-.9 2H108l-.93-2v3h-.7z"/>
+        <path fill="#3D7EDB" d="M29.65 62.64a4 4 0 0 0 3.9-3.5L36.9 39.1a2.8 2.8 0 0 0-2.84-3.48H30a4 4 0 0 0-3.86 3.5l-3.35 20c-.3 2.12 1 3.47 2.78 3.46h4z"/>
+        <path d="M105.26 30.5H99.9a11.44 11.44 0 0 0-5.3 1.33c0-.14 2.86-18.12 2.86-18.12H93l-4 24.8a8.63 8.63 0 0 0-.2.93l-.65 4.17c0 .3-.08.58-.1.86l-.65 4.35a7.24 7.24 0 0 1-6.87 6.37h-6.8c-3.28 0-5.47-2.63-4.9-6.36l5.57-35.1H70l-2.53 15.6a8.3 8.3 0 0 0-5.8-2.2H47.3l-1.4 8.84c.5-5-2.78-9.23-8.46-9.23h-7.7a12 12 0 0 0-11.68 9.83l-4.1 26.1c-.85 5.28 2.56 9.83 8.53 9.83h7.7a11.8 11.8 0 0 0 11.44-9.65l-1.47 9.3h17.07c5.84 0 10.66-5 11.62-10.92l.4-2.28a9.77 9.77 0 0 0 3.5.64h7.5A11.88 11.88 0 0 0 91.2 51.7a29.34 29.34 0 0 0 7.6 4.74c4.7 2.22 8.94 4.24 8.48 7.17l-.46 2.8c-.52 3.92-4.1 6.07-8.2 6.07h-4.77c-4 0-6.65-2.67-6.06-6.45l.45-2.67h-4.5l-.6 3.6c-.84 5.33 3.07 10 9.72 10h5.4c6.72 0 12-3.86 12.92-9.6l.64-4.42c.9-5.74-5.6-8.73-11.08-11.4-4.1-2-8-4.12-8.07-7.43.04-.38.1-.8.14-1.25l.5-3.15a6.75 6.75 0 0 1 6.5-4.74h4.25c3.64 0 6.12 2.54 5.6 6.06l-.52 3.45h4.5l.64-4.38c.78-5.17-2.8-9.6-9.06-9.6zm-64 7l-3.88 24.24a7.3 7.3 0 0 1-6.93 6.35h-7c-3.27 0-5.46-2.64-4.88-6.37l3.85-24.27a7.3 7.3 0 0 1 6.87-6.37h7.05c3.28 0 5.46 2.65 4.88 6.37zM65 57.7l-.58 3.65a7.37 7.37 0 0 1-7 6.35H45.3l2.63-16.6h11.7c3.52 0 5.9 2.74 5.37 6.6zm.45-20.23L65 40.74a7.07 7.07 0 0 1-6.87 6h-9.5L51 31.5h9.57c3.3 0 5.43 2.5 4.9 5.97z"/>
+      </g>
+    </svg>
+    <div class="project-details">
+      <div class="description">
+        <p>
+          OBUS es una activación del espacio que ocupa como soporte pantallas distribuidas
+        a lo largo del edificio de Comunicaciones Pontificia Universidad Católica de Chile.
+        </p>
+        <p>
+          OBUS cuenta con un sistema de despliegue de información y un sistema de control central, donde el primero consta de
+          un video-wall de 110", 13 módulos de pantallas touch de 25” y 1 portrait de 40" touch, y el segundo, de 1 servidor dedicado
+          y 8 cámaras de seguridad.
+        </p>
+        <p>
+          Este sistema alberga cerca de 20 aplicaciones distintas, donde el usuario puede interactuar con ellas, obtener la última información oficial
+          de la facultad, ubicarse dentro de la facultad así como a cualquier funcionario y dejar sus mensajes. El sistema de control central
+          tiene acceso exclusivo para sus administradores, editores y ayudantes, en donde pueden programar los contenidos que serán mostrados en
+          las distintas secciones de noticias.
+          <br>
+          El panel de administración que dispone de documentación completa.
+        </p>
+
+        <p>Desarrollo, programación e implementación <br>
+  Pango - Frankenstudio - Pontificia Universidad Católica de Chile</p>
+        <button class="button--view-project">Ver Más</button>
+
+      </div>
+      <div data-slideshow class="slideshow">
+        <img src="assets/images/obus/1.jpg" class="slide">
+        <img src="assets/images/obus/2.jpg" class="slide">
+        <img src="assets/images/obus/3.jpg" class="slide">
+        <img src="assets/images/obus/4.jpg" class="slide">
+        <img src="assets/images/obus/5.jpg" class="slide">
+        <img src="assets/images/obus/6.jpg" class="slide">
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section section--falabella">
+<section class="section section--falabella" data-project="falabella">
   <div class="wrapper">
-    <div class="description">
-      <h1 class="title">Probador Virtual Falabella</h1>
-      <p>El "Probador Virtual" de Falabella es una activación interactiva encargada por el departamento de Marketing de la compañía y
-desarrollada la oficina Frankenstudio.</p>
-      <p>Este dispositivo de realidad aumentada basa su funcionamiento en la utilización de tecnología MoCap (Motion Capture),
-sensores infra-rojos, cámaras coordinadas y modelos tridimensionales interactivos que permiten generar la experiencia de
-visualizar las prendas en tiempo real y sobre el cuerpo de las visitantes.
-Los módulos están constituidos por dos estructuras de gran escala con pantallas de 55" y 72".</p>
-      <p>La pantalla principal actúa como "espejo" mientras que las pantallas secundarias permiten desplegar,
-de forma aleatoria, otras sesiones grabadas previamente. Cuando la persona sube al podio, activa los sensores infra-rojos,
-la aplicación identifica la estructura de huesos del usuario y posiciona sobre su figura los modelos tridimensionales
-de las prendas de la colección. En este sentido el manejo de la aplicación es por el movimiento de las manos y la sesión
-termina con la grabación voluntaria de la prueba.</p>
-      <p>Colaboración Programación e integración de Kinect, Arduino <br>
-Pango - Frankenstudio</p>
+    <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 261.3522 111.068">
+      <path fill="#BCD400" d="M31.598 31.035c1.027-5.456 1.976-10.22 5.496-14.203 2.403-2.756 5.54-4.316 8.887-4.33 0 0 1.31.012 2.14.144l-.25 2.056s-1.8-.303-2.9.002c-1.43.404-2.26 1.107-3.26 2.282-1.83 2.162-2.49 4.694-3.66 10.585l-3.71 19.494h9.28l-.56 2.6h-9.2l-5.79 30.373c-1.02 5.452-1.97 10.216-5.49 14.2-2.42 2.77-5.57 4.33-8.94 4.33l-1.15-.03.61-2.222c.355.006.744 0 1.06-.053 1.85-.312 3.054-1.076 4.143-2.72 1.74-2.62 2.15-4.155 3.33-10.04l6.44-33.84H18.94l.565-2.597h9.046zM229.233 63.78c-.664 2.25-3.364 10.156-9.685 10.156-7.557 0-3.853-11.448-3.27-13.644.58-2.19 3.326-10.32 9.418-10.32 7.396 0 4.193 11.56 3.537 13.808m3.278-15.73l-.59 2.86h-.18c-1.52-2.84-4.24-3.7-7.08-3.7-8.56 0-13.47 7.11-14.92 13.91-2.06 9.75.87 15.32 8.96 15.32 3.53 0 6.18-.87 9.61-4.05l1.5 3.18h3.52l5.23-27.51zm-27.39-29.29s-8.605 44.54-9.332 48.852c-1.14 6.75 2.356 7.72 4.23 8 3.44.517 5.72-.06 5.72-.06l.353-2.26s-1.295.43-2.816.157c-2.187-.4-2.46-1.67-1.912-5.27.66-4.28 9.4-49.426 9.4-49.426zm-33.667 41.01H157.09c.96-3.694 3.987-9.504 9.286-9.504 5.753 0 5.91 5.81 5.073 9.504m-4.56-12.46c-7.54 0-14.25 5.1-15.82 13.12-2.66 13.55 7.39 16.15 11.63 16.15 3.64 0 6.49-1.26 8.67-2.87l-1.92-2.23c-1.53.95-3.31 1.63-5.29 1.63-7.02 0-8-5.96-7.64-10.13h20.14c2.06-6.85-.17-15.645-9.79-15.645M61.37 63.78c-.66 2.25-3.36 10.156-9.682 10.156-7.56 0-3.853-11.448-3.27-13.644.58-2.19 3.324-10.32 9.413-10.32 7.4 0 4.2 11.56 3.54 13.808m3.28-15.73l-.59 2.86h-.18c-1.52-2.84-4.24-3.7-7.08-3.7-8.57 0-13.47 7.11-14.92 13.91-2.06 9.75.86 15.32 8.97 15.32 3.52 0 6.17-.87 9.61-4.05l1.5 3.18h3.52l5.23-27.51zm75.71 15.75c-.59 2.25-3.32 10.16-8.98 10.16-6.78 0-4.54-11.44-3.97-13.64.92-3.55 2.92-10.07 8.53-10.07 7.65 0 5.02 11.31 4.43 13.56m-2.16-16.57c-3.33 0-7.72 1.98-9.52 4.53l6.39-33.2h-5.66s-8.634 45.96-11.074 57.01h3.558l2.01-3.16c2.088 3.17 4.37 4.054 7.89 4.054 8.1 0 13.39-5.58 15.455-15.33 1.444-6.805-.46-13.91-9.03-13.91m102.85 24.79c0-2.15 1.74-3.89 3.89-3.89 2.15 0 3.893 1.743 3.893 3.89 0 2.147-1.745 3.89-3.895 3.89s-3.89-1.74-3.89-3.89M107.41 63.78c-.663 2.25-3.36 10.156-9.68 10.156-7.562 0-3.86-11.448-3.273-13.644.578-2.19 3.325-10.32 9.414-10.32 7.4 0 4.2 11.56 3.54 13.808m3.29-15.73l-.6 2.86h-.17c-1.52-2.84-4.24-3.7-7.09-3.7-8.56 0-13.47 7.11-14.92 13.91-2.06 9.75.86 15.32 8.97 15.32 3.52 0 6.17-.87 9.61-4.05l1.5 3.18h3.49l5.23-27.51zm78.94-29.29s-8.61 44.54-9.33 48.86c-1.13 6.76 2.36 7.73 4.24 8.01 3.44.52 5.72-.06 5.72-.06l.35-2.26s-1.29.43-2.82.16c-2.19-.4-2.45-1.67-1.91-5.27.66-4.28 9.41-49.42 9.41-49.42zm-106.33 0S74.7 63.3 73.98 67.61c-1.14 6.76 2.36 7.73 4.24 8.01 3.44.52 5.72-.06 5.72-.06l.36-2.26s-1.293.43-2.82.16c-2.19-.4-2.46-1.67-1.91-5.27.657-4.28 9.4-49.42 9.4-49.42z"/>
+    </svg>
+    <div class="project-details">
+      <div class="description">
+        <h1 class="title">Probador Virtual Falabella</h1>
+        <p>El "Probador Virtual" de Falabella es una activación interactiva encargada por el departamento de Marketing de la compañía y
+  desarrollada por la oficina Frankenstudio.</p>
+        <p>Este dispositivo de realidad aumentada basa su funcionamiento en la utilización de tecnología MoCap (Motion Capture),
+  sensores infra-rojos, cámaras coordinadas y modelos tridimensionales interactivos que permiten generar la experiencia de
+  visualizar las prendas en tiempo real y sobre el cuerpo de las visitantes.
+  Los módulos están constituidos por dos estructuras de gran escala con pantallas de 55" y 72".</p>
+        <p>La pantalla principal actúa como "espejo" mientras que las pantallas secundarias permiten desplegar,
+  de forma aleatoria, otras sesiones grabadas previamente. Cuando la persona sube al podio, activa los sensores infra-rojos,
+  la aplicación identifica la estructura de huesos del usuario y posiciona sobre su figura los modelos tridimensionales
+  de las prendas de la colección. En este sentido el manejo de la aplicación es por el movimiento de las manos y la sesión
+  termina con la grabación voluntaria de la prueba.</p>
+        <p>Colaboración Programación e integración de Kinect, Arduino <br>
+  Pango - Frankenstudio</p>
+        <button class="button--view-project">Ver Más</button>
+      </div>
+
+      <div data-slideshow class="slideshow">
+        <img src="assets/images/falabella/1.jpg" class="slide">
+        <img src="assets/images/falabella/2.jpg" class="slide">
+        <img src="assets/images/falabella/3.jpg" class="slide">
+        <img src="assets/images/falabella/4.jpg" class="slide">
+        <img src="assets/images/falabella/5.jpg" class="slide">
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section section--cocacola">
+<section class="section section--cocacola" data-project="cocacola">
   <div class="wrapper">
-    <div class="description">
-      <h1 class="title">Coca Cola</h1>
-      <p>El "Taxi del Movimiento" de Coca Cola es una activación de marca para la agencia McCANN y desarrollado por la oficina Frankenstudio.
-El propósito de la campaña es promover entre las personas el movimiento como medio para alcanzar la felicidad;
-combatiendo el sedentarismo y facilitando, desde dispositivos insertos en situaciones convencionales, la actividad física y el deporte.</p>
-      <p>Para lograr este objetivo se diseña e implementa un mecanismo que que se aloja en la zona del copiloto de un taxi tradicional,
-y que por medio de un sistema de pedales modificados, permite la cuantificación del pedaleo y su traducción monetaria.</p>
-      <p>De esta manera el monto que genera cada pasajero a través de su ejercicio es descontado del total producido por el viaje.
-El sistema basa su operación en el movimiento de pedales, similares a los utilizados por una bicicleta,
-pero en este caso el giro debe ser registrado por un sensor digital y transferido a una aplicación montada en un Tablet Android.</p>
-      <p>Tras el lanzamiento del comercial grabado en Viña del Mar, y como consecuencia del explosivo éxito en las redes sociales,
-se decidió implementar el Taxi de Movimiento de forma operativa en la ciudad de Santiago durante 4 semanas,
-apareciendo en distintos programas de televisión y en diversos noticiarios nacionales e internacionales.</p>
-      <p>La campaña tuve un gran éxito en los medios, obteniendo innumerables premios y distinciones en festivales nacionales e internacionales.</p>
-      <p>Colaboración en desarrollo de aplicación para tablet <br>
-Pango - Frankenstudio</p>
+    <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 261.953">
+      <g fill="#F40000">
+        <path d="M307.21 228.51c-29.77-19.177-70.168-22.542-135.32-4.466-69.458 16.322-92.616 26.785-123.03 5.78-11.683-10.317-15.872-26.93-12.744-50.86 7.255-39.01 26.86-76.55 61.686-118.193 19.44-21.66 37.47-40.25 61.28-47.716 18.248-4.683 16.542 9.658 14.334 11.71-2.33 0-6.244.366-9.27 2.34-2.454 1.904-9.193 8.052-9.555 16.322-.52 12.66 12.58 10.025 18.232 3.074 6.09-7.833 15.093-22.833 8.012-36.813C177.866 4.71 172.738 1.272 166.37.1c-21.8-1.245-42.106 9.148-60.845 20.638C64.543 49.208 31.76 88.655 13.21 131.835c-10.695 26.053-20.367 63.373-5.87 93.748 11.216 21.076 34.5 32.27 62.28 29.93 19.482-2.047 43.04-8.344 58.886-12.146 15.845-3.808 96.954-31.69 123.604 16.836 0 0 8.862-17.203 31.01-17.57 18.207-1.68 44.474 5.27 63.603 19.32-6.373-9.584-24.44-23.71-39.514-33.444z"/>
+        <path d="M180.16 65.674c-15.17-9.953-45.66 9.075-70.08 41.714-22.333 29.277-31.976 63.304-21.482 79.04 15.61 18.514 44.59-8.417 56.915-22.832l1.59-1.685c8.38-9 14.856-19.833 21.123-30.226 0 0 5.76-9.514 6.035-9.954 3.56-.656 7.85-1.68 12.68-3.072-.068.218-18.486 31.176-16.607 46.542.585 4.688.138 21.813 16.858 27.008 22.285 3.735 40.08-13.54 55.777-28.908 0 0 2.675-2.56 4.188-4.02-.383 1.533-.882 3.578-.882 3.578-6.524 22.688 2.27 27.448 7.77 29.205 16.626 4.833 36.487-19.32 36.55-19.32-.514 7.608-2.02 13.902 6 18.952 7.57 2.71 15.23-1.42 21.054-5.3 20.975-14.783 37.873-37.92 51.522-57.92h-8.707c-.103 0-21.483 30.988-35.366 37.723-.022 0-2.548 1.297-4.004.27-1.802-1.537-1.09-4.733.022-6.997.07-.147 53.603-92.995 53.603-92.995h-25.276s-2.76 4.467-2.986 4.76c-.17-.146-.575-.914-.856-1.282-15.66-21.662-51.123 11.658-77.822 50.298-10.28 14.86-23.366 31.588-36.936 43.663 0 0-20.103 18.428-28.693 5.188-3.14-5.562-2.175-13.695-.404-19.036 10-28.47 27.234-54.306 46.844-69.896 5.536-4.315 11.553-5.563 14.54-3.733 2.844 1.686 3.303 5.854 1.503 8.71-4.567-.147-8.226 1.24-11.2 4.315-5.86 6.148-7.897 12.077-6.034 17.64 9.05 12.88 27.1-12.59 26.228-28.104-.312-5.563-3.28-10.83-7.71-13.395-6.6-3.95-16.67-2.926-23.187.223-8.723 3.292-22.533 14.78-30.594 23.71-10.148 11.2-27.552 23.64-32.995 22.247 1.784-4.76 16.485-34.837 1.02-46.106zm121.86 44.496c4.918-6.805 19.23-25.03 22.718-28.102 11.734-10.323 16.424-5.78 16.83-2.563-10.95 19.613-23.876 42.082-36.028 62.282.025-.072-3.803 5.78-3.803 5.78-5.367 8.196-10.77 15.222-19.586 20.125-1.256.368-3.328.515-4.707-.513-1.66-1.1-2.315-2.93-2.128-4.833.528-6.292 6.935-25.536 26.706-52.177zm-137.504 11.782s-.22.66-.33.877c-.027 0-11.02 17.927-11.02 17.927-6.633 8.857-14.916 19.984-25.27 25.324-3.07 1.026-7.31 1.686-9.473-1.02-4.583-5.49-2.22-13.1-.302-19.248l.68-2.196c5.502-14.928 14.232-28.104 22.73-40.326.105-.072.343-.145.43-.145.02.073.053.073.068.22 5.332 10.244 15.33 15 22.807 17.198.045 0 .093.073.093.22 0 .218-.12.513-.412 1.17zm10.414-21.148c-.048.146-4.896 11.27-4.896 11.27-.7.584-1.81.292-3.08 0l-2.175-.37c-6.834-2.12-11.988-6.658-13.577-12.073-2.192-10.538 6.81-18.808 10.778-21.807 3.807-2.637 9.724-4.027 13.16-1.318 2.12 2.49 2.922 5.708 2.922 9.223 0 4.756-1.467 10.098-3.132 15.076zM494.47 134.76c-2.437-5.27-8.223-8.636-14.39-8.27-20.022 1.83-39.607 18.296-49.89 41.933-5.396 12.15-8.34 22.175-10.272 38.13 6.226-7.17 18.926-18.953 33.338-25.394 0 0 1.96-15.296 11.96-28.91 3.785-5.636 11.358-14.71 19.86-12.296 7.43 2.49 4.82 23.055-5.055 42.957-7.305 14.64-18.485 29.28-29.797 39.378-10 8.49-24.798 18.735-37.744 10.832-8.155-4.828-12.314-14.93-11.435-27.957 3.896-36.957 20.72-68.427 44.794-104.287 24.823-33.3 52.187-67.476 89.05-85.702 7.52-3.805 14.482-4.683 20.5-2.34 0 0-34.603 19.027-51.098 54.23-4.196 8.93-10.032 21.002-4.155 31.688 3.07 5.56 8.524 6 12.914 5.708 20.22-4.685 33.283-23.566 43.956-40.836 6.188-13.1 11.688-26.127 11.688-40.618 0-1.756-.09-4.097-.24-5.855 9.66-5.12 29.468 3.953 29.468 3.953 15.48 5.125 48.438 30.375 59.556 35.203 5.423-6.293 14.335-15.806 19.353-20.564l-7.263-4.465c-11.63-7.1-23.923-13.833-36.023-20.492-27.48-15-49.846-9.733-61.23-5.634-4.474 1.61-8.563 3-8.563 3-8.447-9.22-22.302-8.344-32.51-5.854-36.715 10.538-70.802 36.225-107.347 80.796-26.868 34.91-43.534 65.063-52.417 94.848-6.847 20.05-8.928 49.545 7.784 67.037 14.21 14.852 33.05 11.635 46.355 6.294 28.827-14.197 54.736-44.79 67.646-79.992 3.116-10.464 6.574-25.247 1.21-36.52zm66.286-110.29c-3.816 43.766-37.835 69.456-46.252 71.502-5.1 1.023-13.805-1.244-6.035-19.61 11.442-24.74 30.978-45.742 51.94-56.5.51 1.83.496 2.997.346 4.61zM762.555 30.03c-18.3 10.395-37.268 17.126-60.23 14.785-6.365 7.174-12.56 14.565-18.272 22.175 32.23 8.197 66.397-10.026 85.452-27.37C789.663 22.13 800 .103 800 .103s-15.11 17.27-37.445 29.93zM416.73 66.476h-24.005l-13.54 22h24"/>
+        <path d="M702.228 230.546c-2.58 1.756-6.207.406-4.85-3.618 3.376-10.246 16.802-31.126 16.802-31.126l37.396-66.326H725.96c-1.217 2-3.82 6.593-3.82 6.593-1.186-1.975-4.73-6.365-6.19-7.313-6.257-3.955-15.44-2.085-21.773 1.5-27.54 16.103-47.632 47.918-63.478 72.73 0 0-16.682 27.58-25.942 29.63-7.23.586-6.483-9.152-6.17-11.42 2.795-16.397 9.286-31.984 15.826-46.11 13.3-9.22 28.48-21.295 42.276-34.54 29.938-28.62 55.177-61.04 58.866-68.285 0 0-3.993.806-8.708.95-23.032 32.13-70.164 78.823-84.453 85.774 6.33-15.225 47.227-87.896 82.03-122.658l5.477-5.27c8.468-8.27 17.243-16.76 24.08-18.15.723-.074 1.653 0 2.456 1.685.305 6.44-2.092 11.197-4.842 16.612l-3.854 7.905s5.46-1.025 9.044-2.2c4.16-7.826 8.767-16.61 7.07-27.074-.568-3.367-3.005-5.928-6.19-6.514-10.382-1.976-21.697 5.706-30.8 11.93l-.37.217c-46.8 36.665-86.32 89.505-120.87 161.666-2.505 1.9-12.18 4.17-13.825 3.072 3.413-7.024 7.71-16.467 9.86-26.713.37-2.928.717-5.927.717-8.854 0-6.298-1.512-12.224-7.155-16.32-6.616-3.295-14.793-1.757-20.306.73-24.698 10.246-43.157 35.57-56.477 56.425-7.165 13.25-14.308 27.44-16.286 43.69-1.393 12.733 1.443 20.93 8.682 25.03 7.445 3.803 16.815-.15 20.496-2.05 25.02-13.174 42.503-39.592 56.284-63.745.548-.072 8.072-.29 13.763-1.756.075 0 .107 0 .233.077-.326 1.094-3.267 9.88-3.267 9.88-8.734 25.612-12.773 43.032-4.523 53.35 11.79 14.564 31.306-.51 47.183-20.42-3.408 23.857 8.957 27.59 18.382 25.763 10.827-2.926 22.892-14.492 28.49-20.418-1.797 6.95-1.308 19.394 8.54 20.637 6.752 1.248 11.804-2.424 17.65-5.572 20.97-11.418 46.07-49.465 52.587-60.465h-8.545c-9.264 14-21.053 32.358-35.882 41.07zm-188.218-2.548c-1.33-1.976-1.77-4.137-1.815-6.473-.255-14.35 15.184-40.05 26.082-54.05h.023c4.567 10 14.91 16.43 21.152 19.138-7.754 17.273-34.347 54.265-45.442 41.385zm49.818-49.107c-.74.516-13.78-3.877-16.3-15.952-2.138-10.396 5.02-18.52 11.947-22.614 2.973-2.343 7.45-3.146 10.736-1.98 3.05 2.052 3.876 5.714 3.876 9.66 0 2.42-.32 4.906-.604 7.174l-.063.514c-2.174 8.12-5.5 16.1-9.592 23.2zm104.596 44.498c-.01 0-2.474 2.195-2.474 2.195-3.518 3.145-7.138 6.512-11.508 4.828-1.207-.438-2.056-2.046-2.26-3.294-.2-9.002 3.855-17.343 7.786-25.465l1.008-2.123c11.308-18.88 24.452-41.13 43.756-56.57 3.253-2.346 6.783-4.318 10.51-2.78.856.803 1.854 2.195 1.854 3.584 0 .442-.39 1.612-.617 1.976-5.392 8.713-10.527 17.86-15.52 26.64-9.758 17.347-19.88 35.275-32.536 51.012z"/>
+      </g>
+    </svg>
+    <div class="project-details">
+      <div class="description">
+        <h1 class="title">El Taxi del Movimiento</h1>
+        <p>El "Taxi del Movimiento" de Coca Cola es una activación de marca para la agencia McCANN y desarrollado por la oficina Frankenstudio.
+  El propósito de la campaña es promover entre las personas el movimiento como medio para alcanzar la felicidad;
+  combatiendo el sedentarismo y facilitando, desde dispositivos insertos en situaciones convencionales, la actividad física y el deporte.</p>
+        <p>Para lograr este objetivo se diseña e implementa un mecanismo que que se aloja en la zona del copiloto de un taxi tradicional,
+  y que por medio de un sistema de pedales modificados, permite la cuantificación del pedaleo y su traducción monetaria.</p>
+        <p>De esta manera el monto que genera cada pasajero a través de su ejercicio es descontado del total producido por el viaje.
+  El sistema basa su operación en el movimiento de pedales, similares a los utilizados por una bicicleta,
+  pero en este caso el giro debe ser registrado por un sensor digital y transferido a una aplicación montada en un Tablet Android.</p>
+        <p>Tras el lanzamiento del comercial grabado en Viña del Mar, y como consecuencia del explosivo éxito en las redes sociales,
+  se decidió implementar el Taxi de Movimiento de forma operativa en la ciudad de Santiago durante 4 semanas,
+  apareciendo en distintos programas de televisión y en diversos noticiarios nacionales e internacionales.</p>
+        <p>La campaña tuve un gran éxito en los medios, obteniendo innumerables premios y distinciones en festivales nacionales e internacionales.</p>
+        <p>Colaboración en desarrollo de aplicación para tablet <br>
+  Pango - Frankenstudio</p>
+        <button class="button--view-project">Ver Más</button>
+      </div>
+
+      <div data-slideshow class="slideshow">
+        <img src="assets/images/cocacola/1.jpg" class="slide">
+        <img src="assets/images/cocacola/2.jpg" class="slide">
+        <img src="assets/images/cocacola/3.jpg" class="slide">
+        <img src="assets/images/cocacola/4.jpg" class="slide">
+        <img src="assets/images/cocacola/5.jpg" class="slide">
+      </div>
     </div>
   </div>
 </section>
+
+<section class="section section--contact">
+
+</section>
+<footer>
+  <div class="wrapper">
+    <span class="registration">Pango Interactive &reg;. Todos los derechos reservados. 2016</span>
+  </div>
+</footer>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser-polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/noframework.waypoints.min.js"></script>
 <script src="main.js"></script>
 </body>
 </html>
