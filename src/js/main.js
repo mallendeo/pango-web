@@ -1,93 +1,120 @@
-/* global TimelineMax */
+/* global TimelineMax, TweenMax, Waypoint */
+import forEach      from 'lodash.foreach'
+import intro        from './intro'
+import about        from './about'
+import {
+  addClass,
+  splitTextInSpans
+} from './helpers'
 
-const animateLogo = tl => {
-  const maxWindowSize = Math.max(window.innerHeight, window.innerWidth)
+const init = () => {
+  intro().init()
+  intro().animateBackground(new TimelineMax({
+    delay: 2.8,
+    repeat: -1,
+    repeatDelay: 0
+  }))
+  intro().animateLogo(new TimelineMax())
+  intro().animateWords(new TimelineMax())
 
-  const squareDarkWrapper = document.querySelector('.square-dark-wrapper')
-  const squareDark = squareDarkWrapper.querySelector('.square-dark')
-  const square = document.querySelector('.square')
-  const lines = document.querySelectorAll('.line')
-  const sparks = document.querySelectorAll('.spark')
-  const outerCircle = document.querySelector('.outer-logo-circle circle')
+  about()
 
-  tl.set(squareDark, {
-      height: maxWindowSize,
-      width: maxWindowSize
+  const projects = document.querySelectorAll('[data-project]')
+  forEach(projects, project => {
+    const slideshow = project.querySelector('[data-slideshow]')
+    const slides = slideshow.querySelectorAll('.slide')
+    const description = project.querySelector('.description')
+    const moreButton = project.querySelector('.button--view-project')
+
+    moreButton.addEventListener('click', () => {
+      addClass(description, 'more')
+      addClass(moreButton, 'hide')
     })
-    .set(lines, { scaleX: 0 })
 
-  for (let i = 0; i < lines.length; ++i) {
-    tl.to(lines[i], 2, {
-      scaleX: 1,
-      ease: 'Expo.easeOut'
-    }, i / 10)
-  }
+    let tl = new TimelineMax({ repeat: -1 })
+    TweenMax.set(slides, { opacity: 0 })
+    forEach(slides, slide => {
+      tl.to(slide, 1, {
+          opacity: 1,
+          delay: -1
+        })
+        .to(slide, 1, {
+          opacity: 0,
+          delay: 4
+        })
+    })
+    let waypoint = new Waypoint({
+      element: project,
+      handler: () => {
+        waypoint.destroy()
+      }
+    })
+  })
 
-  tl.to(lines, .05, {
-      opacity: 0
-    }, 1)
-    .to(squareDarkWrapper, 1.5, {
-      scale: 1.3,
-      ease: 'Expo.easeOut'
-    }, 1)
-    .to(square, 2, {
-      rotationZ: 45,
-      ease: 'Expo.easeOut'
-    }, 1.5)
-    .to(sparks, 1, {
-      strokeDashoffset: 0,
-      ease: 'Expo.easeOut'
-    }, 1.5)
-    .to(sparks, 1, {
-      strokeDashoffset: 145,
-      ease: 'Expo.easeOut'
-    }, 1.5)
-    .to(outerCircle, 1.4, {
-      strokeDashoffset: 0,
-      ease: 'Expo.easeInOut'
-    }, 1.7)
-  return tl
-}
+  const portfolioTitle = () => {
+    const portfolioWrapper  = document.querySelector('#portfolio .wrapper')
+    const portfolioTextElem = portfolioWrapper.querySelector('h1')
+    const spans             = splitTextInSpans(portfolioTextElem)
+    const squares           = createSquares()
+    const tl                = new TimelineMax()
 
-const animateWords = tl => {
-  const wordsWrapper = document.querySelector('.pango-words')
-  const words = wordsWrapper.querySelectorAll('.pango-word')
-  const lineSeparator = wordsWrapper.querySelector('.line-separator')
-
-  tl.set(wordsWrapper, { opacity: 0 })
-    .set(lineSeparator, { scaleX: 0 })
-    .to(wordsWrapper, .2, { opacity: 1 }, 1.8)
-    .to(lineSeparator, 1, {
-      scaleX: 1,
-      ease: 'Expo.easeOut'
-    }, 1.8)
-
-  for (let i = 0; i < words.length; ++i) {
-    const word = words[i]
-    const letters = word.textContent.split('')
-    word.innerHTML = ''
-
-    for (let letter of letters) {
-      const span = document.createElement('span')
-      span.textContent = letter
-      word.appendChild(span)
+    function createSquares() {
+      const colors = ['#873158', '#A83956', '#C34057', '#E14756', '#292F36']
+      return colors.map(color => {
+        const square = document.createElement('div')
+        addClass(square, 'square-portfolio-animation')
+        square.style.background = color
+        portfolioWrapper.appendChild(square)
+        return square
+      })
     }
 
-    const spans = word.querySelectorAll('span')
-    for (let j = 0; j < spans.length; ++j) {
-      let tlWords = new TimelineMax()
-      tlWords.set(spans[j], { y: i == 0 ? 40 : 30, opacity: 1 })
-      const delay = (1.8 + ((Math.abs(spans.length / 2 - j)) / 10)).toFixed(2)
-      tlWords.to(spans[j], 2, {
-        y: 0,
-        opacity: 1,
-        ease: 'Expo.easeOut'
-      }, delay)
-      console.log(j, delay)
+    function reset() {
+      tl.set(spans, { y: 95 })
+      tl.set(squares, { x: 0, scaleX: 0 })
+    }
+
+    function animate() {
+
+      // animate squares
+      forEach(squares, (square, i) => {
+        let delay = i / 10
+        tl.to(square, 1, {
+          scaleX: 1,
+          ease: 'Power4.easeInOut'
+        }, delay)
+        tl.to(square, 1, {
+          x: '100%',
+          ease: 'Power4.easeInOut'
+        }, delay + .2)
+      })
+
+      // animate letters
+      forEach(spans, (span, i) => {
+        tl.to(span, 1, {
+          y: 0,
+          ease: 'Expo.easeOut'
+        }, i / 30 + .4)
+      })
+    }
+
+    return {
+      animate,
+      reset
     }
   }
-  return tl
+
+  let portfolioTitleInit = portfolioTitle()
+  portfolioTitleInit.reset()
+
+  let waypoint = new Waypoint({
+    element: document.querySelector('#portfolio'),
+    offset: '40%',
+    handler: () => {
+      portfolioTitleInit.animate()
+      waypoint.destroy()
+    }
+  })
 }
 
-animateLogo(new TimelineMax())
-animateWords(new TimelineMax())
+init()

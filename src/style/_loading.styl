@@ -1,0 +1,39 @@
+.cover {
+  background: #f0f0f0;
+  size: 100%;
+  absolute: top 0 left 0;
+  z-index: 999;
+  will-change: opacity;
+  transition: opacity .1s ease;
+  pointer-events: none;
+  svg {
+    @extend .absolute-center;
+    animation: spinnerRotate 3s linear infinite;
+    size: 4em;
+    margin: auto;
+    path {
+      stroke-dasharray: 100.5;
+      animation: spinnerStroke 2s ease infinite;
+    }
+  }
+  &.hide {
+    opacity: 0;
+  }
+}
+
+@keyframes spinnerRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinnerStroke {
+  from {
+    stroke-dashoffset: -100.5;
+  }
+  to {
+    stroke-dashoffset: 100.5;
+  }
+}
