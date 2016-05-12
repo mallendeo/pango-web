@@ -80,23 +80,21 @@ const intro = () => {
     const words         = wordsWrapper.querySelectorAll('.pango-word')
     const lineSeparator = wordsWrapper.querySelector('.line-separator')
 
-    tl.set(wordsWrapper, { opacity: 0 })
-      .set(lineSeparator, { scaleX: 0 })
-      .to(wordsWrapper, .2, { opacity: 1 }, 1.8)
+    tl.set(lineSeparator, { scaleX: 0 })
       .to(lineSeparator, 1, {
         scaleX: 1,
         ease: 'Expo.easeOut'
-      }, 1.8)
+      }, 3)
 
-    forEach(words, (word, i) => {
+    forEach(words, word => {
       const spans = splitTextInSpans(word)
       forEach(spans, (span, j) => {
         let tlWords = new TimelineMax()
-        tlWords.set(span, { y: i == 0 ? 40 : 30, opacity: 1 })
-        const delay = (1.8 + ((Math.abs(spans.length / 2 - j)) / 20)).toFixed(2)
+
+        tlWords.set(span, { y: span.clientHeight, opacity: 1 })
+        const delay = (3 + ((Math.abs(spans.length / 2 - j)) / 20)).toFixed(2)
         tlWords.to(span, 1.4, {
           y: 0,
-          opacity: 1,
           ease: 'Expo.easeOut'
         }, delay)
       })

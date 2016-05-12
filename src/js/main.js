@@ -91,10 +91,10 @@ const init = () => {
 
       // animate letters
       forEach(spans, (span, i) => {
-        tl.to(span, .8, {
+        tl.to(span, 1, {
           y: 0,
           ease: 'Expo.easeOut'
-        }, i / 30 + squares.length / 5)
+        }, i / 30 + .4)
       })
     }
 

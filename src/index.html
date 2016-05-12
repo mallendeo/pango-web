@@ -105,10 +105,8 @@
 
   <h1 class="pango-words">
     <span class="pango-word">PANGO</span>
-    <div class="dark-square-cover"></div>
     <div class="line-separator"></div>
     <span class="pango-word">INTERACTIVE</span>
-    <div class="dark-square-cover"></div>
   </h1>
 
   <div class="bg-lines-wrapper"></div>
@@ -287,8 +285,17 @@
   </div>
 </section>
 
-<section class="section section--contact">
-
+<section id="contact" class="section section--contact">
+  <div class="wrapper">
+    <form class="contact-form clearfix" method="POST" id="contact-form" action="#">
+      <div class="borders"></div>
+      <input class="contact-form__input" name="name" placeholder="Nombre" type="text">
+      <input class="contact-form__input" name="email" placeholder="Email" type="email">
+      <input class="contact-form__input" name="subject" placeholder="Asunto" type="text"></textarea>
+      <textarea class="contact-form__input" name="body" placeholder="Mensaje" rows="8" cols="80"></textarea>
+      <button class="contact-form__submit-btn" type="button">Enviar</button>
+    </form>
+  </div>
 </section>
 <footer>
   <div class="wrapper">

@@ -76,37 +76,24 @@
   font-weight: 300;
   color: #f0f0f0;
   @extend .absolute-center;
-  z-index: 10;
   top: auto;
   bottom: 10%;
   overflow: hidden;
   will-change: opacity;
 
-  .dark-square-cover {
-    size: 100% 3.2rem;
-    background: introBg;
-    absolute: top 3.4rem left 0;
-    z-index: 0;
-    &:last-of-type {
-      height: 1.5rem;
-      top: auto;
-      bottom: -2px;
-    }
-  }
-
   .line-separator {
-    size: 90% 2px;
+    size: 90% 1px;
     background: #f0f0f0;
     will-change: transform;
-    @extend .absolute-center;
-    top: 10%;
+    margin: .2em auto;
   }
 }
 
 .pango-word {
   text-align: center;
   display: block;
-  z-index: 10;
+  overflow: hidden;
+  line-height: 1;
   span {
     will-change: transform;
     display: inline-block;
@@ -115,7 +102,6 @@
     letter-spacing: 0.11em;
     font-size: 1.4rem;
     font-weight: 100;
-    z-index: 12;
   }
 }
 
