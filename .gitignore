@@ -37,3 +37,6 @@ node_modules
 
 # Dist directory
 dist/
+
+# Let's Encrypt
+.well-known
