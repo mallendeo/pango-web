@@ -287,13 +287,13 @@
 
 <section id="contact" class="section section--contact">
   <div class="wrapper">
-    <form class="contact-form clearfix" method="POST" id="contact-form" action="#">
+    <form class="contact-form clearfix" method="POST" id="contact-form" action="/mailer/sendMail">
       <div class="borders"></div>
       <input class="contact-form__input" name="name" placeholder="Nombre" type="text">
       <input class="contact-form__input" name="email" placeholder="Email" type="email">
       <input class="contact-form__input" name="subject" placeholder="Asunto" type="text"></textarea>
       <textarea class="contact-form__input" name="body" placeholder="Mensaje" rows="8" cols="80"></textarea>
-      <button class="contact-form__submit-btn" type="button">Enviar</button>
+      <button class="contact-form__submit-btn" type="submit">Enviar</button>
     </form>
   </div>
 </section>
