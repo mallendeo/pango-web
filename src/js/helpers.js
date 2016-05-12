@@ -16,7 +16,7 @@ export const cumulativeOffset = elem => {
   return { top, left }
 }
 
-// replaces the element text with an array of spans
+// Replaces the element text with an array of spans
 // and returns it
 export const splitTextInSpans = elem => {
   const letters = elem.textContent.split('')
