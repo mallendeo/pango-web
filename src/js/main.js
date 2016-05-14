@@ -109,7 +109,7 @@ const init = () => {
 
   let waypoint = new Waypoint({
     element: document.querySelector('#portfolio'),
-    offset: '40%',
+    offset: '60%',
     handler: () => {
       portfolioTitleInit.animate()
       waypoint.destroy()
