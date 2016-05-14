@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node_modules/gulp/bin/gulp.js --dist",
-    "watch": "node_modules/gulp/bin/gulp.js watch"
+    "watch": "node_modules/gulp/bin/gulp.js watch",
+    "server": "node server.js"
   },
   "author": "",
   "license": "MIT",
@@ -13,7 +14,11 @@
     "lodash.foreach": "^4.2.0",
     "lodash.random": "^3.1.4",
     "raf": "^3.2.0",
-    "sanitize.css": "^3.3.0"
+    "sanitize.css": "^3.3.0",
+    "body-parser": "^1.15.1",
+    "dotenv": "^2.0.0",
+    "express": "^4.13.4",
+    "nodemailer": "^2.4.1"
   },
   "devDependencies": {
     "babel-core": "^6.0.14",
