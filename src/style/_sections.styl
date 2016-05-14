@@ -7,14 +7,13 @@
 .brand-logo {
   width: 30%;
   display: block;
-  width: 960px
+  width: 960px;
   padding: 2em 20em;
   background: #fff;
 }
 
 .wrapper {
   margin: auto;
-  width: 960px;
   position: relative;
 }
 
@@ -259,6 +258,57 @@ colors = #873158, #A83956, #C34057, #E14756;
   //background: #02C39A;
   background: colors[2];
   float: right;
+}
+
+.section.section--mailsent {
+  pointer-events: none;
+  fixed: top 0 left 0;
+  background: #02C39A;
+  color: #fff;
+  text-align: center;
+  size: 100%;
+  z-index: 20;
+  display: flex;
+  transform: scale(.8);
+  opacity: 0;
+  transition: all .2s ease;
+
+  .pango-logo-outline {
+    width: 10em;
+    margin-bottom: 1em;
+    path {
+      fill: #02C39A;
+      stroke: #fff;
+      stroke-width: 4px;
+    }
+  }
+
+  .wrapper {
+    height: auto;
+    margin: auto;
+
+    h1 {
+      font-size: 2em;
+    }
+    h2 {
+      font-size: 1.2em;
+    }
+    a {
+      color: introBg;
+      background: #fff;
+      padding: .4em 1em;
+      display: inline-block;
+      margin: auto;
+      margin-top: 2em;
+    }
+  }
+}
+
+.section--mailsent:target {
+  transition-duration: .4s;
+  pointer-events: all;
+  transform: scale(1);
+  opacity: 1;
 }
 
 footer {

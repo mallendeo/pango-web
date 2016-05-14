@@ -66,7 +66,7 @@ app.post('/sendMail', (req, res) => {
     },
     req.body.subject,
     req.body.text)
-    .then(() => res.sendStatus(200))
+    .then(() => res.redirect('/#mailSent'))
     .catch(console.log)
 })
 
