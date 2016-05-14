@@ -40,3 +40,6 @@ dist/
 
 # Let's Encrypt
 .well-known
+
+# env
+.env
