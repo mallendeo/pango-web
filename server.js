@@ -1,50 +1,50 @@
 'use strict'
 require('dotenv').config()
-const nodemailer = require('nodemailer')
 const express    = require('express')
 const bodyParser = require('body-parser')
+const sendgrid   = require('sendgrid')(process.env.SENDGRID_APIKEY)
 
 const mail = () => {
-  const credentials = `smtps://${process.env.GMAIL_USER}:${process.env.GMAIL_PASSWORD}@smtp.gmail.com`
-  const transporter = nodemailer.createTransport(credentials)
-
   /**
    * @param  {Object} sender  sender.name sender.email
    * @param  {String} subject
    * @param  {String} text
    */
   function sendMail(sender, subject, text) {
-    let mailOptions = {
-      from    : `"${sender.name}" <${sender.email}>`,
-      replyTo : sender.email,
-      to      : process.env.GMAIL_USER,
-      subject : subject,
-      text    : text,
-      html    : text
-    }
+    const email = new sendgrid.Email()
+
+    email.addTo(process.env.MAIL_TO)
+    email.setFrom(sender.email)
+    email.setSubject(subject)
+    email.setHtml(text)
 
     return new Promise((resolve, reject) => {
-      transporter.sendMail(mailOptions, (error, info) => {
-        if(error) {
-          return reject(error)
-        }
+      sendgrid.send(email, (err, json) => {
+        if (err) return reject(err)
         sendCopy(sender, subject, text)
-        resolve(info.response)
+        resolve(json)
       })
     })
   }
 
   function sendCopy(sender, subject, text) {
-    let copy = {
-      from    : `"Pango Interactive" <${process.env.GMAIL_USER}>`,
-      to      : sender.email,
-      subject : `Copia de correo: ${subject}`,
-      text    : `Gracias por escribirnos. Nos pondremos en contacto de inmediato! \n ${text}`,
-      html    : `<strong>Gracias por escribirnos. Nos pondremos en contacto de inmediato!</strong>
-                 <br>
+    const email = new sendgrid.Email()
+
+    email.addTo(sender.email)
+    email.setFrom(process.env.MAIL_TO)
+    email.setSubject(`Copia de correo: ${subject}`)
+
+    const html = `<strong>Gracias por escribirnos. Nos pondremos en contacto de inmediato!</strong>
+                 <br><br>
                  ${text}`
-    }
-    transporter.sendMail(copy)
+    email.setHtml(html)
+
+    return new Promise((resolve, reject) => {
+      sendgrid.send(email, (err, json) => {
+        if (err) return reject(err)
+        resolve(json)
+      })
+    })
   }
 
   return {

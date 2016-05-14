@@ -11,14 +11,14 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.15.1",
+    "dotenv": "^2.0.0",
+    "express": "^4.13.4",
     "lodash.foreach": "^4.2.0",
     "lodash.random": "^3.1.4",
     "raf": "^3.2.0",
     "sanitize.css": "^3.3.0",
-    "body-parser": "^1.15.1",
-    "dotenv": "^2.0.0",
-    "express": "^4.13.4",
-    "nodemailer": "^2.4.1"
+    "sendgrid": "^2.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.0.14",
