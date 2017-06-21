@@ -1,5 +1,5 @@
 # Pango
-[pango.cl](https://pango.cl) and [pangointeractive.com](https://pangointeractive.com) website
+[pangointeractive.com](https://pangointeractive.com) website
 
 ## Configure environment variables
     cp .env.example .env
